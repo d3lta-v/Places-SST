@@ -75,7 +75,8 @@
         // Get the nearest found beacon
         beacons = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity != %d", CLProximityUnknown]];
         beacons = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity != %d", -1]];
-        if (beacons.count==0) {
+        //if (beacons.count==0) {
+        if (false) {
             
         } else {
             CLBeacon *foundBeacon = [beacons firstObject];
