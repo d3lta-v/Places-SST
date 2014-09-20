@@ -10,6 +10,9 @@
 #import "NoBluetoothViewController.h"
 
 @interface ViewController ()
+{
+    NSString *locationString;
+}
 
 @end
 
@@ -54,7 +57,6 @@
     switch (state) {
         case CLRegionStateInside:
             [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
-            
             break;
         case CLRegionStateOutside:
             NSLog(@"outside");
@@ -67,7 +69,7 @@
 
 - (void) locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
-    if ([beacons count] > 0) {
+    if ([beacons count]>0) {
         // Detect amount of beacons in range
         
         // Get the nearest found beacon
@@ -99,42 +101,94 @@
                     break;
             }
             
-            if ([major isEqual:@"1"] && [minor isEqual:@"2"])
-                _inferredLocation.text = @"Icy Marshmallow";
-            else if ([major isEqual:@"57973"] && [minor isEqual:@"10283"])
-                _inferredLocation.text = @"Blueberry Pie";
-            
             // Call the function to automatically set the text
             [self setTextInfoWithMajor:major minor:minor];
         }
     } else {
         // No beacons are in range
+        _signalStrength.text = @"No Signal";
+        _inferredLocation.text = @"You are not in SST";
+        _inferredInfo.text = @"You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
     }
 }
 
 -(void)setTextInfoWithMajor:(NSString *)major minor:(NSString *)minor
 {
-    NSString *locationString = [[NSString alloc]init];
+    locationString = [[NSString alloc] init];
     
     // Admin block
     if ([major isEqual:@"1"]) {
-        [locationString stringByAppendingString:@"Admin Block, "];
+        locationString = [locationString stringByAppendingString:@"Admin Block, "];
         if ([minor isEqual:@"1"])
-            [locationString stringByAppendingString:@"General Office"];
-        else if ([minor isEqual:@"2"])
-            [locationString stringByAppendingString:@"Atrium"];
+            locationString = [locationString stringByAppendingString:@"General Office"];
+        else if ([minor isEqual:@"2"]) {
+            locationString = [locationString stringByAppendingString:@"Atrium"];
+            [UIView transitionWithView:_bgImg
+                              duration:5.0f
+                               options:UIViewAnimationOptionTransitionCrossDissolve
+                            animations:^{
+                                _bgImg.image = [UIImage imageNamed:@"AtriumDefault"];
+                            } completion:nil];
+        }
+        else
+            locationString=@"Polling for signals...";
     }
     // Block B
     else if ([major isEqual:@"2"]) {
-        [locationString stringByAppendingString:@"Block B, "];
+        locationString = [locationString stringByAppendingString:@"Block B, "];
+        if ([minor isEqual:@"1"])
+            locationString = [locationString stringByAppendingString:@"Visitor Centre"];
+        else if ([minor isEqual:@"2"]){
+            locationString = [locationString stringByAppendingString:@"Exhibition Centre"];
+            [UIView transitionWithView:_bgImg
+                              duration:5.0f
+                               options:UIViewAnimationOptionTransitionCrossDissolve
+                            animations:^{
+                                _bgImg.image = [UIImage imageNamed:@"ExhibitionStudioDefault"];
+                            } completion:nil];
+        }
+        else if ([minor isEqual:@"4"]) {
+            locationString = [locationString stringByAppendingString:@"ICT Helpdesk"];
+            [UIView transitionWithView:_bgImg
+                              duration:5.0f
+                               options:UIViewAnimationOptionTransitionCrossDissolve
+                            animations:^{
+                                _bgImg.image = [UIImage imageNamed:@"HelpdeskDefault"];
+                            } completion:nil];
+        }
+        else if ([minor isEqual:@"5"])
+            locationString = [locationString stringByAppendingString:@"Café"];
+        else
+            locationString=@"Polling for signals...";
     }
     // Block C
     else if ([major isEqual:@"3"]) {
-        [locationString stringByAppendingString:@"Block C, "];
+        locationString = [locationString stringByAppendingString:@"Block C, "];
+        if ([minor isEqual:@"1"])
+            locationString = [locationString stringByAppendingString:@"Laboratories"];
+        else if ([minor isEqual:@"2"]) {
+            locationString = [locationString stringByAppendingString:@"Canteen"];
+            [UIView transitionWithView:_bgImg
+                              duration:5.0f
+                               options:UIViewAnimationOptionTransitionCrossDissolve
+                            animations:^{
+                                _bgImg.image = [UIImage imageNamed:@"CanteenDefault"];
+                            } completion:nil];
+            
+        }
+        else if ([minor isEqual:@"3"])
+            locationString = [locationString stringByAppendingString:@"Pond"];
+        else
+            locationString=@"Polling for signals...";
     }
     // Sports complex
     else if ([major isEqual:@"4"]) {
-        [locationString stringByAppendingString:@"Sports Complex, "];
+        locationString = [locationString stringByAppendingString:@"Sports Complex, "];
+    }
+    else
+    {
+        locationString = @"Unknown location";
+        NSLog(@"%@, %@", major, minor);
     }
     
     // Finally set the text

@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *inferredLocation;
 @property (weak, nonatomic) IBOutlet UITextView *signalStrength;
 @property (weak, nonatomic) IBOutlet UITextView *inferredInfo;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImg;
 
 @end
 

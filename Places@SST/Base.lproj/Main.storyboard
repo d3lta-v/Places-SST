@@ -19,7 +19,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ExhibitionStudioDefault" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-EC-BPt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="No Signal" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxR-aD-yfk">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Bluetooth chip initializing..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nxR-aD-yfk">
                                 <rect key="frame" x="31" y="158" width="259" height="39"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,7 +38,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Polling for signals..." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t84-Un-vWg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Waiting for signals..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t84-Un-vWg">
                                 <rect key="frame" x="31" y="82" width="259" height="39"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,7 +51,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Polling for signals..." translatesAutoresizingMaskIntoConstraints="NO" id="4Tu-Rg-qjm">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Information not available yet" translatesAutoresizingMaskIntoConstraints="NO" id="4Tu-Rg-qjm">
                                 <rect key="frame" x="31" y="234" width="259" height="289"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,6 +63,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="bgImg" destination="ICd-EC-BPt" id="Kcd-Dd-oQq"/>
                         <outlet property="inferredInfo" destination="4Tu-Rg-qjm" id="bte-rL-pID"/>
                         <outlet property="inferredLocation" destination="t84-Un-vWg" id="D2O-GB-1Lf"/>
                         <outlet property="signalStrength" destination="nxR-aD-yfk" id="mT9-7L-pY6"/>
