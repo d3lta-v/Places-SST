@@ -124,7 +124,7 @@
         else if ([minor isEqual:@"2"]) {
             locationString = [locationString stringByAppendingString:@"Atrium"];
             [UIView transitionWithView:_bgImg
-                              duration:5.0f
+                              duration:0.2f
                                options:UIViewAnimationOptionTransitionCrossDissolve
                             animations:^{
                                 _bgImg.image = [UIImage imageNamed:@"AtriumDefault"];
@@ -141,7 +141,7 @@
         else if ([minor isEqual:@"2"]){
             locationString = [locationString stringByAppendingString:@"Exhibition Centre"];
             [UIView transitionWithView:_bgImg
-                              duration:5.0f
+                              duration:0.2f
                                options:UIViewAnimationOptionTransitionCrossDissolve
                             animations:^{
                                 _bgImg.image = [UIImage imageNamed:@"ExhibitionStudioDefault"];
@@ -150,7 +150,7 @@
         else if ([minor isEqual:@"4"]) {
             locationString = [locationString stringByAppendingString:@"ICT Helpdesk"];
             [UIView transitionWithView:_bgImg
-                              duration:5.0f
+                              duration:0.2f
                                options:UIViewAnimationOptionTransitionCrossDissolve
                             animations:^{
                                 _bgImg.image = [UIImage imageNamed:@"HelpdeskDefault"];
@@ -169,7 +169,7 @@
         else if ([minor isEqual:@"2"]) {
             locationString = [locationString stringByAppendingString:@"Canteen"];
             [UIView transitionWithView:_bgImg
-                              duration:5.0f
+                              duration:0.2f
                                options:UIViewAnimationOptionTransitionCrossDissolve
                             animations:^{
                                 _bgImg.image = [UIImage imageNamed:@"CanteenDefault"];
