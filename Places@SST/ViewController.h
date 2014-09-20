@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreBluetooth/CoreBluetooth.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <CLLocationManagerDelegate, CBCentralManagerDelegate>
 
+// Managers
+@property (strong, nonatomic) CLBeaconRegion *myBeaconRegion;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CBCentralManager *bluetoothManager;
+
+// UI Elements
+@property (weak, nonatomic) IBOutlet UITextView *inferredLocation;
+@property (weak, nonatomic) IBOutlet UITextView *signalStrength;
+@property (weak, nonatomic) IBOutlet UITextView *inferredInfo;
 
 @end
 
