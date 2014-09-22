@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,43 +18,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ExhibitionStudioDefault" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-EC-BPt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExhibitionStudioDefault" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-EC-BPt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Bluetooth chip initializing..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nxR-aD-yfk">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Bluetooth chip initializing..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nxR-aD-yfk">
                                 <rect key="frame" x="31" y="158" width="259" height="39"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Signal Strength:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BA9-1j-ked">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signal Strength:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BA9-1j-ked">
                                 <rect key="frame" x="99" y="129" width="123" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where are you at right now:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhf-E6-jw7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where are you at right now:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhf-E6-jw7">
                                 <rect key="frame" x="55" y="53" width="211" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Waiting for signals..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t84-Un-vWg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Waiting for signals..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t84-Un-vWg">
                                 <rect key="frame" x="31" y="82" width="259" height="39"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="More information:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F8-Fd-VO0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More information:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F8-Fd-VO0">
                                 <rect key="frame" x="92" y="205" width="136" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Information not available yet" translatesAutoresizingMaskIntoConstraints="NO" id="4Tu-Rg-qjm">
-                                <rect key="frame" x="31" y="234" width="259" height="289"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Information not available yet" translatesAutoresizingMaskIntoConstraints="NO" id="4Tu-Rg-qjm">
+                                <rect key="frame" x="31" y="234" width="259" height="301"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -60,6 +62,33 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="BA9-1j-ked" secondAttribute="trailing" constant="98" id="44w-Ag-FER"/>
+                            <constraint firstAttribute="trailing" secondItem="nxR-aD-yfk" secondAttribute="trailing" constant="30" id="AEd-zH-akC"/>
+                            <constraint firstItem="BA9-1j-ked" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="99" id="AMn-1r-W9f"/>
+                            <constraint firstItem="4Tu-Rg-qjm" firstAttribute="top" secondItem="fhf-E6-jw7" secondAttribute="bottom" constant="160" id="APn-Qc-QgH"/>
+                            <constraint firstItem="4Tu-Rg-qjm" firstAttribute="top" secondItem="0F8-Fd-VO0" secondAttribute="bottom" constant="8" id="BLC-OG-Q4a"/>
+                            <constraint firstItem="0F8-Fd-VO0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="92" id="JnT-Vq-gyd"/>
+                            <constraint firstAttribute="trailing" secondItem="t84-Un-vWg" secondAttribute="trailing" constant="30" id="KHq-ao-jJ3"/>
+                            <constraint firstItem="nxR-aD-yfk" firstAttribute="height" secondItem="t84-Un-vWg" secondAttribute="height" id="M9k-c5-Wbo"/>
+                            <constraint firstAttribute="trailing" secondItem="0F8-Fd-VO0" secondAttribute="trailing" constant="92" id="OzM-vZ-DCD"/>
+                            <constraint firstItem="nxR-aD-yfk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="31" id="PDS-kJ-UHc"/>
+                            <constraint firstAttribute="trailing" secondItem="4Tu-Rg-qjm" secondAttribute="trailing" constant="30" id="R2u-jC-TyN"/>
+                            <constraint firstItem="t84-Un-vWg" firstAttribute="top" secondItem="fhf-E6-jw7" secondAttribute="bottom" constant="8" id="RiN-Xg-CLd"/>
+                            <constraint firstItem="4Tu-Rg-qjm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="31" id="UQ2-yy-bo6"/>
+                            <constraint firstItem="nxR-aD-yfk" firstAttribute="top" secondItem="BA9-1j-ked" secondAttribute="bottom" constant="8" id="bvF-Q5-5aE"/>
+                            <constraint firstAttribute="trailing" secondItem="fhf-E6-jw7" secondAttribute="trailing" constant="54" id="h3r-UR-FQ7"/>
+                            <constraint firstAttribute="bottom" secondItem="4Tu-Rg-qjm" secondAttribute="bottom" constant="33" id="hef-PW-lPn"/>
+                            <constraint firstItem="BA9-1j-ked" firstAttribute="top" secondItem="t84-Un-vWg" secondAttribute="bottom" constant="8" id="jkO-jY-qBn"/>
+                            <constraint firstItem="fhf-E6-jw7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="55" id="ncc-e3-3p4"/>
+                            <constraint firstItem="ICd-EC-BPt" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="q8V-it-0GC"/>
+                            <constraint firstItem="ICd-EC-BPt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="rNm-QK-oih"/>
+                            <constraint firstAttribute="bottom" secondItem="ICd-EC-BPt" secondAttribute="bottom" id="sUf-6A-PP6"/>
+                            <constraint firstAttribute="trailing" secondItem="ICd-EC-BPt" secondAttribute="trailing" id="sX8-ny-Q1G"/>
+                            <constraint firstItem="fhf-E6-jw7" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="53" id="t5L-83-ths"/>
+                            <constraint firstItem="0F8-Fd-VO0" firstAttribute="top" secondItem="nxR-aD-yfk" secondAttribute="bottom" constant="8" id="v10-U1-adG"/>
+                            <constraint firstItem="t84-Un-vWg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="31" id="yJQ-as-DcY"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -72,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="313"/>
+            <point key="canvasLocation" x="240.5" y="312.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PXY-ZF-PMJ">
@@ -103,30 +132,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NoBluetooth" translatesAutoresizingMaskIntoConstraints="NO" id="JyA-D9-Pg3">
-                                <rect key="frame" x="97" y="124" width="116" height="220"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Bluetooth Enabled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBF-fq-kAv">
-                                <rect key="frame" x="45" y="378" width="221" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Bluetooth Enabled" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBF-fq-kAv">
+                                <rect key="frame" x="50" y="376" width="221" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="This app requires Bluetooth to be enabled and that your device must support Bluetooth 4.0" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9o-hy-eHJ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This app requires Bluetooth to be enabled and that your device must support Bluetooth 4.0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="l9o-hy-eHJ">
                                 <rect key="frame" x="16" y="419" width="288" height="87"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoBluetooth" translatesAutoresizingMaskIntoConstraints="NO" id="JyA-D9-Pg3">
+                                <rect key="frame" x="102" y="122" width="116" height="221"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l9o-hy-eHJ" firstAttribute="leading" secondItem="NKh-X5-824" secondAttribute="leading" constant="16" id="EVJ-Jh-4OD"/>
+                            <constraint firstItem="JyA-D9-Pg3" firstAttribute="top" secondItem="NKh-X5-824" secondAttribute="top" constant="122" id="GCU-Rk-Gg7"/>
+                            <constraint firstItem="PBF-fq-kAv" firstAttribute="leading" secondItem="NKh-X5-824" secondAttribute="leading" constant="50" id="JNU-jZ-TwC"/>
+                            <constraint firstItem="l9o-hy-eHJ" firstAttribute="top" secondItem="PBF-fq-kAv" secondAttribute="bottom" constant="15" id="KPs-JH-5QB"/>
+                            <constraint firstAttribute="bottom" secondItem="l9o-hy-eHJ" secondAttribute="bottom" constant="62" id="MFZ-mo-EeQ"/>
+                            <constraint firstItem="PBF-fq-kAv" firstAttribute="top" secondItem="JyA-D9-Pg3" secondAttribute="bottom" constant="33" id="ONH-5U-qtP"/>
+                            <constraint firstAttribute="trailing" secondItem="PBF-fq-kAv" secondAttribute="trailing" constant="49" id="Ras-5c-CTd"/>
+                            <constraint firstAttribute="trailing" secondItem="l9o-hy-eHJ" secondAttribute="trailing" constant="16" id="TGE-21-eKe"/>
+                            <constraint firstAttribute="trailing" secondItem="JyA-D9-Pg3" secondAttribute="trailing" constant="102" id="UQQ-3v-dpR"/>
+                            <constraint firstItem="JyA-D9-Pg3" firstAttribute="leading" secondItem="NKh-X5-824" secondAttribute="leading" constant="102" id="gKh-qv-Tig"/>
+                            <constraint firstAttribute="width" secondItem="JyA-D9-Pg3" secondAttribute="height" multiplier="320:221" id="x7r-vF-zP9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="No Bluetooth Available" id="kP4-eE-3Hg"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRy-Xt-uFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="313"/>
+            <point key="canvasLocation" x="1080.5" y="312.5"/>
         </scene>
     </scenes>
     <resources>

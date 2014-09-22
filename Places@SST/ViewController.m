@@ -113,6 +113,7 @@
     }
 }
 
+// This will set the text and images accordingly
 -(void)setTextInfoWithMajor:(NSString *)major minor:(NSString *)minor
 {
     locationString = [[NSString alloc] init];
@@ -147,6 +148,7 @@
                             animations:^{
                                 _bgImg.image = [UIImage imageNamed:@"ExhibitionStudioDefault"];
                             } completion:nil];
+            _inferredInfo.text = @"The Exhibition Center is a place for students and the school to showcase their works and achievements, ranging from art pieces to outstanding ISS (Interdisciplinary Science Studies) projects. This place houses the school's various achievements.";
         }
         else if ([minor isEqual:@"4"]) {
             locationString = [locationString stringByAppendingString:@"ICT Helpdesk"];
