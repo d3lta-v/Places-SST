@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2256566B19DADE5A007D0702 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2256566A19DADE5A007D0702 /* Accelerate.framework */; };
 		22C453E819CD3FD8007D6292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453E719CD3FD8007D6292 /* main.m */; };
 		22C453EB19CD3FD8007D6292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453EA19CD3FD8007D6292 /* AppDelegate.m */; };
 		22C453EE19CD3FD8007D6292 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453ED19CD3FD8007D6292 /* ViewController.m */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2256566A19DADE5A007D0702 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		22C453E219CD3FD8007D6292 /* Places@SST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Places@SST.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C453E619CD3FD8007D6292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C453E719CD3FD8007D6292 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2256566B19DADE5A007D0702 /* Accelerate.framework in Frameworks */,
 				22C4541119CD5CED007D6292 /* CoreLocation.framework in Frameworks */,
 				22C4540F19CD5CE8007D6292 /* CoreBluetooth.framework in Frameworks */,
 			);
@@ -72,6 +75,7 @@
 		22C453D919CD3FD8007D6292 = {
 			isa = PBXGroup;
 			children = (
+				2256566A19DADE5A007D0702 /* Accelerate.framework */,
 				22C4541019CD5CED007D6292 /* CoreLocation.framework */,
 				22C4540E19CD5CE8007D6292 /* CoreBluetooth.framework */,
 				22C453E419CD3FD8007D6292 /* Places@SST */,
@@ -388,7 +392,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "992ed230-ec87-47d2-be98-6ac7f684f55d";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -403,7 +407,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5811a7a7-5ace-4d70-a817-9dbcdd0972e0";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

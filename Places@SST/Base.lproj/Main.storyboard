@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,12 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExhibitionStudioDefault" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-EC-BPt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SSTGeneric" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-EC-BPt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Bluetooth chip initializing..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nxR-aD-yfk">
                                 <rect key="frame" x="31" y="158" width="259" height="39"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -42,7 +40,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Waiting for signals..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t84-Un-vWg">
                                 <rect key="frame" x="31" y="82" width="259" height="39"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -55,7 +53,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Information not available yet" translatesAutoresizingMaskIntoConstraints="NO" id="4Tu-Rg-qjm">
                                 <rect key="frame" x="31" y="234" width="259" height="301"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -101,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="240.5" y="312.5"/>
+            <point key="canvasLocation" x="240" y="312"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PXY-ZF-PMJ">
@@ -132,47 +130,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Bluetooth Enabled" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBF-fq-kAv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Bluetooth Enabled" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBF-fq-kAv">
                                 <rect key="frame" x="50" y="376" width="221" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This app requires Bluetooth to be enabled and that your device must support Bluetooth 4.0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="l9o-hy-eHJ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="This app requires Bluetooth to be enabled and that your device must support Bluetooth 4.0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="l9o-hy-eHJ">
                                 <rect key="frame" x="16" y="419" width="288" height="87"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoBluetooth" translatesAutoresizingMaskIntoConstraints="NO" id="JyA-D9-Pg3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NoBluetooth" translatesAutoresizingMaskIntoConstraints="NO" id="JyA-D9-Pg3">
                                 <rect key="frame" x="102" y="122" width="116" height="221"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="l9o-hy-eHJ" firstAttribute="leading" secondItem="NKh-X5-824" secondAttribute="leading" constant="16" id="EVJ-Jh-4OD"/>
-                            <constraint firstItem="JyA-D9-Pg3" firstAttribute="top" secondItem="NKh-X5-824" secondAttribute="top" constant="122" id="GCU-Rk-Gg7"/>
-                            <constraint firstItem="PBF-fq-kAv" firstAttribute="leading" secondItem="NKh-X5-824" secondAttribute="leading" constant="50" id="JNU-jZ-TwC"/>
-                            <constraint firstItem="l9o-hy-eHJ" firstAttribute="top" secondItem="PBF-fq-kAv" secondAttribute="bottom" constant="15" id="KPs-JH-5QB"/>
-                            <constraint firstAttribute="bottom" secondItem="l9o-hy-eHJ" secondAttribute="bottom" constant="62" id="MFZ-mo-EeQ"/>
-                            <constraint firstItem="PBF-fq-kAv" firstAttribute="top" secondItem="JyA-D9-Pg3" secondAttribute="bottom" constant="33" id="ONH-5U-qtP"/>
-                            <constraint firstAttribute="trailing" secondItem="PBF-fq-kAv" secondAttribute="trailing" constant="49" id="Ras-5c-CTd"/>
-                            <constraint firstAttribute="trailing" secondItem="l9o-hy-eHJ" secondAttribute="trailing" constant="16" id="TGE-21-eKe"/>
-                            <constraint firstAttribute="trailing" secondItem="JyA-D9-Pg3" secondAttribute="trailing" constant="102" id="UQQ-3v-dpR"/>
-                            <constraint firstItem="JyA-D9-Pg3" firstAttribute="leading" secondItem="NKh-X5-824" secondAttribute="leading" constant="102" id="gKh-qv-Tig"/>
-                            <constraint firstAttribute="width" secondItem="JyA-D9-Pg3" secondAttribute="height" multiplier="320:221" id="x7r-vF-zP9"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="No Bluetooth Available" id="kP4-eE-3Hg"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRy-Xt-uFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080.5" y="312.5"/>
+            <point key="canvasLocation" x="1108" y="313"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ExhibitionStudioDefault" width="320" height="568"/>
         <image name="NoBluetooth" width="153" height="290"/>
+        <image name="SSTGeneric" width="320" height="568"/>
     </resources>
 </document>

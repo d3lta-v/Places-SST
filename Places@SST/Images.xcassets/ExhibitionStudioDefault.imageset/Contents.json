@@ -7,12 +7,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "exhibitionstudiodefault-1.png"
+      "filename" : "ExhibitonOuter@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "ExhibitionStudioDefault.png"
+      "filename" : "ExhibitonOuter@3x.png"
     }
   ],
   "info" : {
