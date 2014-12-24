@@ -31,9 +31,9 @@
     _signalIndicator.image = [PlacesKit imageOfCanvas1];
     
     //TODO: Turn off all BL functionality UNTIL UI is finished
-    /*
+    
     // Check if bluetooth is on or off
-    [self startBluetoothStatusMonitoring];
+    /*[self startBluetoothStatusMonitoring];
     
     // Initialize the location manager
     self.locationManager = [[CLLocationManager alloc] init];
@@ -47,7 +47,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,10 +66,11 @@
 {
     switch (state) {
         case CLRegionStateInside:
+            NSLog(@"Inside region, beginning ranging");
             [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
             break;
         case CLRegionStateOutside:
-            NSLog(@"outside");
+            NSLog(@"Outside region");
             // No beacons are in range
             _signalStrength.text = @"No Signal";
             _inferredLocation.text = @"You are not in SST";
@@ -243,10 +244,6 @@
 
 - (void)startBluetoothStatusMonitoring {
     self.bluetoothManager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue() options:@{CBCentralManagerOptionShowPowerAlertKey: @(NO)}];
-}
-
--(BOOL)prefersStatusBarHidden {
-    return YES;
 }
 
 @end
