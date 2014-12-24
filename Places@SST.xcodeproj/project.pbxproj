@@ -10,6 +10,7 @@
 		221CD2771A37263100CECF74 /* PlacesKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CD2761A37263100CECF74 /* PlacesKit.m */; };
 		2256566B19DADE5A007D0702 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2256566A19DADE5A007D0702 /* Accelerate.framework */; };
 		227F58EB1A4AE17C00FCB2E9 /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */; };
+		227F58EE1A4AEFDE00FCB2E9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227F58ED1A4AEFDE00FCB2E9 /* AboutViewController.m */; };
 		22C453E819CD3FD8007D6292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453E719CD3FD8007D6292 /* main.m */; };
 		22C453EB19CD3FD8007D6292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453EA19CD3FD8007D6292 /* AppDelegate.m */; };
 		22C453EE19CD3FD8007D6292 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453ED19CD3FD8007D6292 /* ViewController.m */; };
@@ -38,6 +39,8 @@
 		2256566A19DADE5A007D0702 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		227F58E91A4AE17C00FCB2E9 /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
 		227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
+		227F58EC1A4AEFDE00FCB2E9 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		227F58ED1A4AEFDE00FCB2E9 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		22C453E219CD3FD8007D6292 /* Places@SST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Places@SST.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C453E619CD3FD8007D6292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C453E719CD3FD8007D6292 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				22C453ED19CD3FD8007D6292 /* ViewController.m */,
 				227F58E91A4AE17C00FCB2E9 /* EventsTableViewController.h */,
 				227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */,
+				227F58EC1A4AEFDE00FCB2E9 /* AboutViewController.h */,
+				227F58ED1A4AEFDE00FCB2E9 /* AboutViewController.m */,
 				22C4540B19CD5538007D6292 /* NoBluetoothViewController.h */,
 				22C4540C19CD5538007D6292 /* NoBluetoothViewController.m */,
 				22C453EF19CD3FD8007D6292 /* Main.storyboard */,
@@ -273,6 +278,7 @@
 				22C4540D19CD5538007D6292 /* NoBluetoothViewController.m in Sources */,
 				22C453EE19CD3FD8007D6292 /* ViewController.m in Sources */,
 				22C453EB19CD3FD8007D6292 /* AppDelegate.m in Sources */,
+				227F58EE1A4AEFDE00FCB2E9 /* AboutViewController.m in Sources */,
 				221CD2771A37263100CECF74 /* PlacesKit.m in Sources */,
 				227F58EB1A4AE17C00FCB2E9 /* EventsTableViewController.m in Sources */,
 				22C453E819CD3FD8007D6292 /* main.m in Sources */,

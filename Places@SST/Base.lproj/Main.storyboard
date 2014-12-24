@@ -64,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="313"/>
         </scene>
-        <!--View Controller-->
+        <!--About-->
         <scene sceneID="KoG-3o-3aC">
             <objects>
                 <viewController id="YWA-SN-rAc" sceneMemberID="viewController">
@@ -75,9 +75,20 @@
                     <view key="view" contentMode="scaleToFill" id="qEC-4H-Cta">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AboutBG_iPhone" translatesAutoresizingMaskIntoConstraints="NO" id="p2Z-eZ-lg5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Square" translatesAutoresizingMaskIntoConstraints="NO" id="KgR-9T-U2R">
+                                <rect key="frame" x="25" y="120" width="128" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StatiX" translatesAutoresizingMaskIntoConstraints="NO" id="R3m-hM-YZ6">
+                                <rect key="frame" x="167" y="114" width="128" height="128"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NmJ-kZ-lYM"/>
+                    <navigationItem key="navigationItem" title="About" id="NmJ-kZ-lYM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dmf-sZ-0C3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -97,9 +108,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="kOf-7H-lXi" kind="relationship" relationship="viewControllers" id="A9P-dy-B8Y"/>
-                        <segue destination="IUR-1Y-b4e" kind="relationship" relationship="viewControllers" id="Ten-cp-nP6"/>
-                        <segue destination="EbJ-gA-sVZ" kind="relationship" relationship="viewControllers" id="A9q-jy-M62"/>
+                        <segue destination="EbJ-gA-sVZ" kind="relationship" relationship="viewControllers" id="0JB-50-52D"/>
+                        <segue destination="kOf-7H-lXi" kind="relationship" relationship="viewControllers" id="iaK-1Y-ttP"/>
+                        <segue destination="IUR-1Y-b4e" kind="relationship" relationship="viewControllers" id="bPY-Fl-KjH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWm-rT-maa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -265,7 +276,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AboutBG_iPhone" width="375" height="667"/>
         <image name="NoBluetooth" width="153" height="290"/>
         <image name="SSTGeneric" width="320" height="568"/>
+        <image name="Square" width="242" height="242"/>
+        <image name="StatiX" width="341" height="341"/>
     </resources>
 </document>

@@ -18,6 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:(64.0/255.0) green:(164.0/255.0) blue:(231.0/255.0) alpha:1]];
+    
     return YES;
 }
 
