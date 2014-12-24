@@ -90,6 +90,7 @@
         beacons = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity != %d", CLProximityUnknown]];
         beacons = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity != %d", -1]];
         //if (beacons.count==0) {
+        //TODO: Finish this catching mechanism
         if (false) {
             
         } else {
