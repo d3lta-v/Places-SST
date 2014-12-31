@@ -17,14 +17,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Set status bar color to white
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:(64.0/255.0) green:(164.0/255.0) blue:(231.0/255.0) alpha:1]];
+    
+    // Set UINavigationBar colors
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
+    // Initializes tab bar customization
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]]; // Tab bar SELECTED color
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:(64.0/255.0) green:(164.0/255.0) blue:(231.0/255.0) alpha:1]]; // Tab bar BACKGROUND color
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:71.0/255.0 green:82.0/255.0 blue:93.0/255.0 alpha:1]} forState:UIControlStateNormal]; // Tab bar ITEM DESELECTED TEXT color
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateSelected]; // Tab bar ITEM SELECTED TEXT color
+    // Custom UITabBarController code here
+    self.tabBarController = (UITabBarController*)self.window.rootViewController;
+    UITabBar *tabBar = self.tabBarController.tabBar;
+    UITabBarItem *item0 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *item1 = [tabBar.items objectAtIndex:1];
+    UITabBarItem *item2 = [tabBar.items objectAtIndex:2];
+    // Image setting
+    // Events Tab
+    [item0 setImage:[[UIImage imageNamed:@"EventsTab"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [item0 setSelectedImage:[[UIImage imageNamed:@"EventsTabSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    // Here Tab
+    [item1 setImage:[[UIImage imageNamed:@"HereTab"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [item1 setSelectedImage:[[UIImage imageNamed:@"HereTabSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    // About Tab
+    [item2 setImage:[[UIImage imageNamed:@"AboutTab"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    //TODO: Get the Selected Variant
+    //[item2 setSelectedImage:[[UIImage imageNamed:@"AboutTabSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     // Sets the default tab to index 1 (or 2nd tab)
-    UITabBarController *tabBar = (UITabBarController *)self.window.rootViewController;
-    tabBar.selectedIndex = 1;
+    self.tabBarController.selectedIndex = 1;
     
     return YES;
 }

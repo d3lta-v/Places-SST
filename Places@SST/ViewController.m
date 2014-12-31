@@ -26,7 +26,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _inferredLocation.adjustsFontSizeToFitWidth = YES;
-    _inferredLocation.numberOfLines = 1;
+    //_inferredLocation.numberOfLines = 1;
     
     _signalIndicator.image = [PlacesKit imageOfCanvas1];
     

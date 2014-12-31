@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eKL-E2-mAC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eKL-E2-mAC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SSTGeneric" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-EC-BPt" userLabel="bgImg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SSTWallDefault" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-EC-BPt" userLabel="bgImg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PKb-26-n4i" userLabel="Line">
@@ -30,21 +30,21 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pnN-FA-4I4">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnN-FA-4I4">
                                 <rect key="frame" x="23" y="375" width="275" height="136"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">In SST, learning is supported and enhanced by state-of-the-art specialised studios and laboratories as well as flexible learning spaces and recreational facilities. They support curricular programming and services by providing an environment that is conducive for bright young minds to work in. This app will guide you through the various locations in SST and allow you to learn more about them.</string>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Yh-cZ-Eqf" userLabel="signalIndicator">
+                            <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Yh-cZ-Eqf" userLabel="signalIndicator">
                                 <rect key="frame" x="10" y="67" width="300" height="300"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sciencehub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMW-dg-2af" userLabel="inferredLocation">
-                                <rect key="frame" x="69" y="198" width="183" height="38"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="35"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exhibition Center" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="182" translatesAutoresizingMaskIntoConstraints="NO" id="MMW-dg-2af" userLabel="inferredLocation">
+                                <rect key="frame" x="69" y="175" width="182" height="83"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -120,7 +120,6 @@
         <!--Navigation Controller-->
         <scene sceneID="PXY-ZF-PMJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o8E-sI-fGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="V6t-mF-hUj" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gTa-Nn-RLs">
@@ -131,6 +130,7 @@
                         <segue destination="BaD-Pd-kuL" kind="relationship" relationship="rootViewController" id="VKv-Rh-QtE"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8E-sI-fGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1184" y="313"/>
         </scene>
@@ -191,7 +191,7 @@
         <scene sceneID="Hdw-Xn-hd9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EbJ-gA-sVZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" id="xTb-Fb-pEU"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="EventsTab" id="xTb-Fb-pEU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pzd-CR-MHv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -258,7 +258,7 @@
         <scene sceneID="6rK-b9-ZYR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IUR-1Y-b4e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="About" id="8MK-xu-Dss"/>
+                    <tabBarItem key="tabBarItem" title="About" image="AboutTab" id="8MK-xu-Dss"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fkn-dX-QZT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -277,8 +277,10 @@
     </scenes>
     <resources>
         <image name="AboutBG_iPhone" width="375" height="667"/>
+        <image name="AboutTab" width="30" height="30"/>
+        <image name="EventsTab" width="30" height="30"/>
         <image name="NoBluetooth" width="153" height="290"/>
-        <image name="SSTGeneric" width="320" height="568"/>
+        <image name="SSTWallDefault" width="375" height="667"/>
         <image name="Square" width="242" height="242"/>
         <image name="StatiX" width="341" height="341"/>
     </resources>

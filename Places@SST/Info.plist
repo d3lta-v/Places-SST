@@ -19,11 +19,11 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>12242014</string>
+	<string>12312014</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>The current location is always logged by the app, even in the background</string>
+	<string>This app uses Bluetooth 4.0 BLE technology to track your location in SST and since we need to deliver push messages to you, the app needs to always use your location. This app uses only Bluetooth and no GPS.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>
