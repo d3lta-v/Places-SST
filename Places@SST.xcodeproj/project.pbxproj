@@ -11,6 +11,9 @@
 		2256566B19DADE5A007D0702 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2256566A19DADE5A007D0702 /* Accelerate.framework */; };
 		227F58EB1A4AE17C00FCB2E9 /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */; };
 		227F58EE1A4AEFDE00FCB2E9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227F58ED1A4AEFDE00FCB2E9 /* AboutViewController.m */; };
+		229D8F001A579B6D00B92A4B /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D8EFB1A579B6D00B92A4B /* SVIndefiniteAnimatedView.m */; };
+		229D8F011A579B6D00B92A4B /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 229D8EFD1A579B6D00B92A4B /* SVProgressHUD.bundle */; };
+		229D8F021A579B6D00B92A4B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D8EFF1A579B6D00B92A4B /* SVProgressHUD.m */; };
 		22C453E819CD3FD8007D6292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453E719CD3FD8007D6292 /* main.m */; };
 		22C453EB19CD3FD8007D6292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453EA19CD3FD8007D6292 /* AppDelegate.m */; };
 		22C453EE19CD3FD8007D6292 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453ED19CD3FD8007D6292 /* ViewController.m */; };
@@ -41,6 +44,12 @@
 		227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
 		227F58EC1A4AEFDE00FCB2E9 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		227F58ED1A4AEFDE00FCB2E9 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		229D8EFA1A579B6D00B92A4B /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		229D8EFB1A579B6D00B92A4B /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		229D8EFC1A579B6D00B92A4B /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		229D8EFD1A579B6D00B92A4B /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		229D8EFE1A579B6D00B92A4B /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		229D8EFF1A579B6D00B92A4B /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		22C453E219CD3FD8007D6292 /* Places@SST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Places@SST.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C453E619CD3FD8007D6292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C453E719CD3FD8007D6292 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +90,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		229D8EF81A579B6D00B92A4B /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				229D8EF91A579B6D00B92A4B /* SVProgressHUD */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		229D8EF91A579B6D00B92A4B /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				229D8EFA1A579B6D00B92A4B /* SVIndefiniteAnimatedView.h */,
+				229D8EFB1A579B6D00B92A4B /* SVIndefiniteAnimatedView.m */,
+				229D8EFC1A579B6D00B92A4B /* SVProgressHUD-Prefix.pch */,
+				229D8EFD1A579B6D00B92A4B /* SVProgressHUD.bundle */,
+				229D8EFE1A579B6D00B92A4B /* SVProgressHUD.h */,
+				229D8EFF1A579B6D00B92A4B /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		22C453D919CD3FD8007D6292 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +148,7 @@
 				22C453EF19CD3FD8007D6292 /* Main.storyboard */,
 				22C453F219CD3FD8007D6292 /* Images.xcassets */,
 				22C453F419CD3FD8007D6292 /* LaunchScreen.xib */,
+				229D8EF81A579B6D00B92A4B /* Externals */,
 				22C453E519CD3FD8007D6292 /* Supporting Files */,
 			);
 			path = "Places@SST";
@@ -241,6 +272,7 @@
 				22C453F119CD3FD8007D6292 /* Main.storyboard in Resources */,
 				22C453F619CD3FD8007D6292 /* LaunchScreen.xib in Resources */,
 				22C453F319CD3FD8007D6292 /* Images.xcassets in Resources */,
+				229D8F011A579B6D00B92A4B /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +288,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		221E8FCA19CEC10C00B3E8AF /* Automatic Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -266,7 +298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n# xcode-build-number-generator.sh\n# @desc Automaticvally create build number every time using curent day, month and year\n# @usage\n# 1. Select: your Target in Xcode\n# 2. Select: Build Phases Tab\n# 3. Select: Add Build Phase -> Add Run Script\n# 4. Paste code below in to new \"Run Script\" section\n# 5. Drag the \"Run Script\" below \"Link Binaries With Libraries\"\n\n\n#Credits\n# sekati@github for intial direction about automatic versioning\n# http://www.codinghorror.com/blog/2007/02/whats-in-a-version-number-anyway.html (For unferstanding the Software Versoining)\n#Feel free to leave comment or report issues\n\n\nMONTH=`date | awk '{print $2}'`\n\ncase \"$MONTH\" in\n'Jan' | [Jj][Aa][Na] )\nMONTHNUMBER=1\n;;\n'Feb' |[Ff][Ee][Bb])\nMONTHNUMBER=2\n;;\n'Mar' |[Mm][Aa][Rr])\nMONTHNUMBER=3\necho \"Month is $MONTHNUMBER\"\n;;\n'Apr' |[Aa][Pp][Rr])\nMONTHNUMBER=4\n;;\n'May' |[Mm][Aa][Yy])\nMONTHNUMBER=5\n;;\n'Jun' |[Jj][Uu][Nn])\nMONTHNUMBER=6\n;;\n'Jul' |[Jj][Uu][Ll])\nMONTHNUMBER=7\n;;\n'Aug' |[Aa][Uu][Gg])\nMONTHNUMBER=8\n;;\n'Sep' |[Ss][Ee][Pp])\nMONTHNUMBER=9\n;;\n'Oct' |[Oo][Cc][Tt])\nMONTHNUMBER=10\n;;\n'Nov' |[Nn][Oo][Vv])\nMONTHNUMBER=11\n;;\n'Dec' |[Dd][Ee][Cc])\nMONTHNUMBER=12\n;;\nesac\n\nDATE=`date | awk '{print $3}'`\necho \"Date = $DATE\"\nYEAR=`date | awk '{print $6}'`\necho \"Date = $YEAR\"\n\n### only uncomment section below if testing the format in terminal\n#echo \"BuildNumber1 = $MONTH$DATE$YEAR\"\n#echo \"or BUILD NUMBER = $DATE$MONTH$YEAR\"\n#echo \"or BUILD NUMBER = $MONTHNUMBER$DATE$YEAR Format is |Month Number Date Year|\"\n#echo \"or BUILD NUMBER = $DATE$MONTHNUMBER$YEAR format is |Date MonthNumber Year|\"\n############################\n\n#### Uncomment only one one style or last one will be in effect\n#buildNumber=$MONTH$DATE$YEAR\n#buildNumber=$DATE$MONTH$YEAR\nbuildNumber=$MONTHNUMBER$DATE$YEAR\n#buildNumber=$DATE$MONTHNUMBER$YEAR\n\n\necho \"Final Build number is $buildNumber\"\n## Below command write buildNumber in the property list\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -278,7 +310,9 @@
 				22C4540D19CD5538007D6292 /* NoBluetoothViewController.m in Sources */,
 				22C453EE19CD3FD8007D6292 /* ViewController.m in Sources */,
 				22C453EB19CD3FD8007D6292 /* AppDelegate.m in Sources */,
+				229D8F001A579B6D00B92A4B /* SVIndefiniteAnimatedView.m in Sources */,
 				227F58EE1A4AEFDE00FCB2E9 /* AboutViewController.m in Sources */,
+				229D8F021A579B6D00B92A4B /* SVProgressHUD.m in Sources */,
 				221CD2771A37263100CECF74 /* PlacesKit.m in Sources */,
 				227F58EB1A4AE17C00FCB2E9 /* EventsTableViewController.m in Sources */,
 				22C453E819CD3FD8007D6292 /* main.m in Sources */,
