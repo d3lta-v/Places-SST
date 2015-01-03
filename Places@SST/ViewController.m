@@ -26,9 +26,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _inferredLocation.adjustsFontSizeToFitWidth = YES;
-    //_inferredLocation.numberOfLines = 1;
     
-    _signalIndicator.image = [PlacesKit imageOfCanvas1];
+    _signalIndicator.image = [PlacesKit imageOfFull];
     
     //TODO: Turn off all BL functionality UNTIL UI is finished
     
@@ -121,14 +120,14 @@
                     _signalIndicator.image = [PlacesKit imageOfCanvas3];
                     break;
             }*/
-            if (foundBeacon.proximity == CLProximityImmediate) {
-                _signalIndicator.image = [PlacesKit imageOfCanvas1];
-            } else if (foundBeacon.proximity == CLProximityNear) {
-                _signalIndicator.image = [PlacesKit imageOfCanvas1];
-            } else if (foundBeacon.proximity == CLProximityFar) {
-                _signalIndicator.image = [PlacesKit imageOfCanvas2];
-            } else if (foundBeacon.proximity == CLProximityUnknown) {
-                _signalIndicator.image = [PlacesKit imageOfCanvas3];
+            if (foundBeacon.proximity == CLProximityImmediate) { // Next to the beacon
+                _signalIndicator.image = [PlacesKit imageOfFull];
+            } else if (foundBeacon.proximity == CLProximityNear) { // Near the beacon (strong signal)
+                _signalIndicator.image = [PlacesKit imageOfFull];
+            } else if (foundBeacon.proximity == CLProximityFar) { // (med/weak signal)
+                _signalIndicator.image = [PlacesKit imageOfHalf];
+            } else if (foundBeacon.proximity == CLProximityUnknown) { // (weak/v. weak signal)
+                _signalIndicator.image = [PlacesKit imageOfLow];
             }
             
             // Call the function to automatically set the text
@@ -137,8 +136,9 @@
     } else {
         // Still in region but no good lock on to beacon
         //_signalStrength.text = @"No Signal";
-        //_inferredLocation.text = @"You are not in SST";
-        //_inferredInfo.text = @"You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
+        
+        _inferredLocation.text = @"No Signal";
+        _inferredInfo.text = @"You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
     }
 }
 
