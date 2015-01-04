@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DTCoreText.h"
+#import "NJKWebViewProgress.h"
 
-@interface WebViewController : UIViewController
+@interface WebViewController : UIViewController <UIGestureRecognizerDelegate, DTAttributedTextContentViewDelegate, DTLazyImageViewDelegate, UIWebViewDelegate, NJKWebViewProgressDelegate>
+{
+    IBOutlet DTAttributedTextView *textView;
+    IBOutlet UIWebView *webView;
+}
+
+@property (strong, nonatomic) IBOutlet DTAttributedTextView *textView;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (copy, nonatomic) NSString *receivedURL;
 
 @end

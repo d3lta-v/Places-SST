@@ -215,11 +215,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Events" id="e51-jf-MqU">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="KRj-Qh-A5K" id="a4V-B4-Fyn"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="ECW-9b-LRB">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="JzG-a6-JAD" detailTextLabel="fzs-Wa-Ogv" rowHeight="55" style="IBUITableViewCellStyleSubtitle" id="ECW-9b-LRB">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ECW-9b-LRB" id="zPE-ye-4Yg">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JzG-a6-JAD">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fzs-Wa-Ogv">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -229,8 +251,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="osG-bV-Tzc"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="EUC-Cr-lFI" id="deq-gF-aJA"/>
+                        <segue destination="Gqq-wa-M9P" kind="show" identifier="MasterToDetail" id="sK6-MJ-ekq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPh-Gg-Wcj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="EUC-Cr-lFI">
+                    <connections>
+                        <outlet property="delegate" destination="KRj-Qh-A5K" id="EwO-vJ-ecs"/>
+                        <outlet property="searchBar" destination="e51-jf-MqU" id="4LV-Ur-dpA"/>
+                        <outlet property="searchContentsController" destination="KRj-Qh-A5K" id="ekc-ng-nqr"/>
+                        <outlet property="searchResultsDataSource" destination="KRj-Qh-A5K" id="wUT-Yk-YT3"/>
+                        <outlet property="searchResultsDelegate" destination="KRj-Qh-A5K" id="1XG-sI-svB"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="750" y="-344"/>
         </scene>
@@ -273,6 +308,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8SQ-R0-s3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="218" y="1030"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="MfO-xC-dNW">
+            <objects>
+                <viewController id="Gqq-wa-M9P" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8WA-WM-8XI"/>
+                        <viewControllerLayoutGuide type="bottom" id="9DP-HH-ciy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ddr-ND-XeQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTz-WX-3WM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Gqq-wa-M9P" id="hXl-DB-JeS"/>
+                                </connections>
+                            </webView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gz6-C0-UCN" customClass="DTAttributedTextView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="WTz-WX-3WM" secondAttribute="bottom" id="IUR-SG-kSe"/>
+                            <constraint firstItem="WTz-WX-3WM" firstAttribute="top" secondItem="Ddr-ND-XeQ" secondAttribute="top" id="Pa8-Z9-AkQ"/>
+                            <constraint firstItem="WTz-WX-3WM" firstAttribute="leading" secondItem="Ddr-ND-XeQ" secondAttribute="leading" id="chR-YQ-HZM"/>
+                            <constraint firstItem="Gz6-C0-UCN" firstAttribute="top" secondItem="Ddr-ND-XeQ" secondAttribute="top" id="ngZ-Ei-C3x"/>
+                            <constraint firstItem="Gz6-C0-UCN" firstAttribute="leading" secondItem="Ddr-ND-XeQ" secondAttribute="leading" id="pnN-RQ-WxJ"/>
+                            <constraint firstAttribute="trailing" secondItem="WTz-WX-3WM" secondAttribute="trailing" id="prJ-vh-QS3"/>
+                            <constraint firstAttribute="trailing" secondItem="Gz6-C0-UCN" secondAttribute="trailing" id="tJW-eq-wiZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Gz6-C0-UCN" secondAttribute="bottom" id="yH1-Ed-BhS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ab6-Ik-SCV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="YL8-xg-96X">
+                            <connections>
+                                <action selector="actionSheet:" destination="Gqq-wa-M9P" id="dSa-YJ-dGQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="Gz6-C0-UCN" id="qvS-x8-arn"/>
+                        <outlet property="webView" destination="WTz-WX-3WM" id="q4r-hc-SjC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="niN-r7-5J8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198" y="-344"/>
         </scene>
     </scenes>
     <resources>

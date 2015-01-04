@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventsTableViewController : UITableViewController
+@interface EventsTableViewController : UITableViewController <NSXMLParserDelegate, UITableViewDataSource, UITableViewDelegate>
+
+-(void)refresh:(id)sender;
 
 @end
