@@ -40,6 +40,7 @@
 		22C4540D19CD5538007D6292 /* NoBluetoothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C4540C19CD5538007D6292 /* NoBluetoothViewController.m */; };
 		22C4540F19CD5CE8007D6292 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C4540E19CD5CE8007D6292 /* CoreBluetooth.framework */; };
 		22C4541119CD5CED007D6292 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C4541019CD5CED007D6292 /* CoreLocation.framework */; };
+		22E814001A59409700B09802 /* InAppBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E813FF1A59409700B09802 /* InAppBrowserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,8 @@
 		22C4540C19CD5538007D6292 /* NoBluetoothViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoBluetoothViewController.m; sourceTree = "<group>"; };
 		22C4540E19CD5CE8007D6292 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		22C4541019CD5CED007D6292 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		22E813FE1A59409700B09802 /* InAppBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppBrowserViewController.h; sourceTree = "<group>"; };
+		22E813FF1A59409700B09802 /* InAppBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppBrowserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +313,8 @@
 				227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */,
 				229D8F131A57A7E500B92A4B /* WebViewController.h */,
 				229D8F141A57A7E500B92A4B /* WebViewController.m */,
+				22E813FE1A59409700B09802 /* InAppBrowserViewController.h */,
+				22E813FF1A59409700B09802 /* InAppBrowserViewController.m */,
 				227F58EC1A4AEFDE00FCB2E9 /* AboutViewController.h */,
 				227F58ED1A4AEFDE00FCB2E9 /* AboutViewController.m */,
 				22C4540B19CD5538007D6292 /* NoBluetoothViewController.h */,
@@ -557,6 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E814001A59409700B09802 /* InAppBrowserViewController.m in Sources */,
 				22C4540D19CD5538007D6292 /* NoBluetoothViewController.m in Sources */,
 				229D934D1A58300D00B92A4B /* TUSafariActivity.m in Sources */,
 				22C453EE19CD3FD8007D6292 /* ViewController.m in Sources */,

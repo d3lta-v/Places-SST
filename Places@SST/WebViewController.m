@@ -11,6 +11,7 @@
 #import "SIMUXCRParser.h"
 #import "TUSafariActivity.h"
 #import "NJKWebViewProgressView.h"
+#import "InAppBrowserViewController.h"
 
 @interface WebViewController ()
 {
@@ -191,20 +192,28 @@ NSString *url;
     
     CGSize screensize;
     
-    /*if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
     {
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenHeight = screenRect.size.height;
         
+        if (screenHeight==480) { // 3.5inch
+            screensize=CGSizeMake(280, 480);
+        } else if (screenHeight==568) { // 4inch
+            //screensize=CGSizeMake(280, 1136);
+            screensize=CGSizeMake(280, 568);
+        } else if (screenHeight==667) { // 4.7inch
+            screensize=CGSizeMake(335, 667);
+        } else if (screenHeight==736) { // 5.5inch
+            screensize=CGSizeMake(374, 736);
+        } else { // Fallback
+            screensize=CGSizeMake(280, 568);
+        }
     }
     else if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
     {
-        if (IS_RETINA) {
-            //screensize=CGSizeMake(1536.0, 2048.0);
-            screensize=CGSizeMake(768.0, 1024.0);
-        }
-        else {
-            screensize=CGSizeMake(768.0, 1024.0);
-        }
-    }*/
+        screensize=CGSizeMake(768.0, 1024.0);
+    }
     
     screensize=CGSizeMake(280, 1136);
     
@@ -303,6 +312,8 @@ NSString *url;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    InAppBrowserViewController *vc = (InAppBrowserViewController *)[[segue destinationViewController] topViewController];
+    [vc setUrlString:linkURL];
 }
 
 

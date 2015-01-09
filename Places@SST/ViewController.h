@@ -19,10 +19,8 @@
 
 // UI Elements
 @property (weak, nonatomic) IBOutlet UILabel *inferredLocation;
-@property (weak, nonatomic) IBOutlet UITextView *signalStrength;
 @property (weak, nonatomic) IBOutlet UITextView *inferredInfo;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImg;
-@property (weak, nonatomic) IBOutlet UIImageView *inferredImage;
 @property (weak, nonatomic) IBOutlet UIImageView *signalIndicator;
 
 @end

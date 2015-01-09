@@ -31,7 +31,7 @@
                                 </state>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnN-FA-4I4">
-                                <rect key="frame" x="23" y="375" width="275" height="136"/>
+                                <rect key="frame" x="23" y="377" width="275" height="136"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">In SST, learning is supported and enhanced by state-of-the-art specialised studios and laboratories as well as flexible learning spaces and recreational facilities. They support curricular programming and services by providing an environment that is conducive for bright young minds to work in. This app will guide you through the various locations in SST and allow you to learn more about them.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,10 +39,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Yh-cZ-Eqf" userLabel="signalIndicator">
-                                <rect key="frame" x="10" y="67" width="300" height="300"/>
+                                <rect key="frame" x="10" y="69" width="300" height="300"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SST Wall" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="182" translatesAutoresizingMaskIntoConstraints="NO" id="MMW-dg-2af" userLabel="inferredLocation">
-                                <rect key="frame" x="69" y="175" width="182" height="83"/>
+                                <rect key="frame" x="69" y="177" width="182" height="83"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -58,11 +58,12 @@
                         <outlet property="inferredLocation" destination="MMW-dg-2af" id="3c3-gs-xYN"/>
                         <outlet property="signalIndicator" destination="1Yh-cZ-Eqf" id="rYc-Rt-sMA"/>
                         <segue destination="V6t-mF-hUj" kind="presentation" identifier="NoBluetoothSegue" modalTransitionStyle="coverVertical" id="3vY-x3-Ryl"/>
+                        <segue destination="5zI-r4-3K4" kind="presentation" identifier="ShowDetail" id="W93-IE-pq7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="313"/>
+            <point key="canvasLocation" x="1198" y="313"/>
         </scene>
         <!--About-->
         <scene sceneID="KoG-3o-3aC">
@@ -80,11 +81,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Square" translatesAutoresizingMaskIntoConstraints="NO" id="KgR-9T-U2R">
-                                <rect key="frame" x="25" y="120" width="128" height="128"/>
+                                <rect key="frame" x="16" y="114" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StatiX" translatesAutoresizingMaskIntoConstraints="NO" id="R3m-hM-YZ6">
-                                <rect key="frame" x="167" y="114" width="128" height="128"/>
+                                <rect key="frame" x="184" y="114" width="120" height="120"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Siddhant Chaurasia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01H-LQ-rWg">
+                                <rect key="frame" x="74" y="268" width="172" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZT-2i-zrK">
+                                <rect key="frame" x="139" y="297" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -132,7 +145,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8E-sI-fGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1184" y="313"/>
+            <point key="canvasLocation" x="1634" y="313"/>
         </scene>
         <!--No Bluetooth Available-->
         <scene sceneID="P3r-ty-W4U">
@@ -185,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRy-Xt-uFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1640" y="313"/>
+            <point key="canvasLocation" x="2082" y="313"/>
         </scene>
         <!--Events-->
         <scene sceneID="Hdw-Xn-hd9">
@@ -354,11 +367,114 @@
                     <connections>
                         <outlet property="textView" destination="Gz6-C0-UCN" id="qvS-x8-arn"/>
                         <outlet property="webView" destination="WTz-WX-3WM" id="q4r-hc-SjC"/>
+                        <segue destination="5zI-r4-3K4" kind="presentation" identifier="ToBrowser" id="caT-c2-bkv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="niN-r7-5J8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1198" y="-344"/>
+        </scene>
+        <!--Web Browser-->
+        <scene sceneID="Urs-br-5S8">
+            <objects>
+                <viewController id="ZNR-xT-ks0" customClass="InAppBrowserViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ybd-Uu-8bm"/>
+                        <viewControllerLayoutGuide type="bottom" id="BIb-45-Dyn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TsZ-GG-uSp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="133-gS-kEd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tgd-q6-G5M">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="js0-CT-bqe"/>
+                                    <barButtonItem systemItem="rewind" id="1lh-nk-Tdj">
+                                        <connections>
+                                            <action selector="goBack:" destination="ZNR-xT-ks0" id="k4n-hK-MnD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="S7b-Ag-qOK"/>
+                                    <barButtonItem systemItem="fastForward" id="RkY-9A-9Ba">
+                                        <connections>
+                                            <action selector="goForward:" destination="ZNR-xT-ks0" id="VMG-au-5uD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="xJu-BW-6Yz"/>
+                                    <barButtonItem systemItem="refresh" id="blL-0k-596">
+                                        <connections>
+                                            <action selector="refreshOrStop:" destination="ZNR-xT-ks0" id="6UJ-ke-eBX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="gKo-5N-eob"/>
+                                    <barButtonItem systemItem="action" id="NqA-S1-g8a">
+                                        <connections>
+                                            <action selector="exportAction:" destination="ZNR-xT-ks0" id="31V-y7-Tag"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Q2G-Nv-PXd"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tgd-q6-G5M" firstAttribute="leading" secondItem="TsZ-GG-uSp" secondAttribute="leading" id="C52-fD-uUN"/>
+                            <constraint firstItem="133-gS-kEd" firstAttribute="top" secondItem="TsZ-GG-uSp" secondAttribute="top" id="Dxw-H8-nTb"/>
+                            <constraint firstAttribute="bottom" secondItem="Tgd-q6-G5M" secondAttribute="bottom" id="GG1-mX-08r"/>
+                            <constraint firstAttribute="trailing" secondItem="Tgd-q6-G5M" secondAttribute="trailing" id="P7x-Zu-EmT"/>
+                            <constraint firstItem="133-gS-kEd" firstAttribute="leading" secondItem="TsZ-GG-uSp" secondAttribute="leading" id="QsX-64-9s7"/>
+                            <constraint firstAttribute="trailing" secondItem="133-gS-kEd" secondAttribute="trailing" id="brg-JP-cfG"/>
+                            <constraint firstAttribute="bottom" secondItem="133-gS-kEd" secondAttribute="bottom" id="cYM-3E-yGH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Web Browser" id="xGG-fA-AKT">
+                        <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="QgC-Ir-0bD">
+                            <connections>
+                                <action selector="exitNavigationVC:" destination="ZNR-xT-ks0" id="qMh-NV-6vu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="1lh-nk-Tdj" id="E2Q-fD-ptj"/>
+                        <outlet property="exportButton" destination="NqA-S1-g8a" id="2Sb-Qy-aBd"/>
+                        <outlet property="fixedSpace2" destination="S7b-Ag-qOK" id="F42-cv-pNf"/>
+                        <outlet property="fixedSpace3" destination="xJu-BW-6Yz" id="GMl-R0-C6l"/>
+                        <outlet property="fixedSpace4" destination="gKo-5N-eob" id="nkt-R1-elQ"/>
+                        <outlet property="flexSpace1" destination="js0-CT-bqe" id="RbZ-at-TVe"/>
+                        <outlet property="flexSpace5" destination="Q2G-Nv-PXd" id="LzJ-aO-XgC"/>
+                        <outlet property="forwardButton" destination="RkY-9A-9Ba" id="MEL-NL-BAm"/>
+                        <outlet property="mainWebView" destination="133-gS-kEd" id="cef-fX-FZD"/>
+                        <outlet property="refreshButton" destination="blL-0k-596" id="OVw-wl-UrB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4x-ew-6xY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2077" y="-344"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1w4-bi-tjX">
+            <objects>
+                <navigationController id="5zI-r4-3K4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BCH-lS-QhO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.25098039220000001" green="0.64313725489999995" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="XXp-B8-bDV">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="ZNR-xT-ks0" kind="relationship" relationship="rootViewController" id="Wh5-zY-WmK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LM3-s6-a25" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1634" y="-344"/>
         </scene>
     </scenes>
     <resources>
@@ -370,4 +486,7 @@
         <image name="Square" width="242" height="242"/>
         <image name="StatiX" width="341" height="341"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="W93-IE-pq7"/>
+    </inferredMetricsTieBreakers>
 </document>

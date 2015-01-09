@@ -45,8 +45,7 @@
     [item1 setSelectedImage:[[UIImage imageNamed:@"HereTabSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     // About Tab
     [item2 setImage:[[UIImage imageNamed:@"AboutTab"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    //TODO: Get the Selected Variant
-    //[item2 setSelectedImage:[[UIImage imageNamed:@"AboutTabSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [item2 setSelectedImage:[[UIImage imageNamed:@"AboutTabSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     // Sets the default tab to index 1 (or 2nd tab)
     self.tabBarController.selectedIndex = 1;
     
