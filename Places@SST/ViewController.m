@@ -17,6 +17,7 @@
 {
     NSString *locationString;
     NSString *linkURL;
+    bool inRegion;
 }
 
 @end
@@ -29,15 +30,18 @@
     
     _inferredLocation.adjustsFontSizeToFitWidth = YES;
     
+    inRegion = false;
+    
+    
     //TODO: Change the default signal level to None
-    _signalIndicator.image = [PlacesKit imageOfFull];
+    _signalIndicator.image = [PlacesKit imageOfNone];
     
     linkURL = @"";
     
     //TODO: Turn off all BL functionality UNTIL UI is finished
     
     // Check if bluetooth is on or off
-    /*[self startBluetoothStatusMonitoring];
+    [self startBluetoothStatusMonitoring];
     
     // Initialize the location manager
     self.locationManager = [[CLLocationManager alloc] init];
@@ -47,7 +51,7 @@
     self.myBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID identifier:@"Estimote Region"];
     
     // Start monitoring
-    [self.locationManager startMonitoringForRegion:self.myBeaconRegion];*/
+    [self.locationManager startMonitoringForRegion:self.myBeaconRegion];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -69,18 +73,27 @@
 - (void) locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
 {
     switch (state) {
-        case CLRegionStateInside:
+        case CLRegionStateInside: {
             NSLog(@"Inside region, beginning ranging");
             [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
+        }
             break;
-        case CLRegionStateOutside:
+        case CLRegionStateOutside: {
             NSLog(@"Outside region");
             // No beacons are in range
             //_signalStrength.text = @"No Signal";
             _signalIndicator.image = [PlacesKit imageOfNone];
             _inferredLocation.text = @"No Signal";
             _inferredInfo.text = @"The app detected no Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
+            /*while (!inRegion) {
+                NSLog(@"not in region");
+                [self.locationManager requestStateForRegion:self.myBeaconRegion];
+            }*/
+        }
+            break;
         case CLRegionStateUnknown:
+            NSLog(@"State unknown");
+            break;
         default:
             // stop ranging beacons, etc
             NSLog(@"Region unknown");
@@ -128,9 +141,10 @@
         }
     } else {
         // Still in region but no good lock on to beacon
-        _inferredLocation.text = @"Weak Signal";
+        /*_inferredLocation.text = @"Weak Signal";
         _signalIndicator.image = [PlacesKit imageOfNone];
-        _inferredInfo.text = @"The Bluetooth signal is too weak to determine your accurate position. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
+        [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"SSTGeneric"];} completion:nil];
+        _inferredInfo.text = @"The Bluetooth signal is too weak to determine your accurate position. You might not be in a good iBeacon coverage zone. Please walk around SST to double check your connection.";*/
     }
 }
 
@@ -154,7 +168,8 @@
             linkURL = @"";
         }*/
         else
-            locationString=@"Weak Signal";
+            //locationString=@"Weak Signal";
+            goto unimplemented;
     }
     // Block B
     else if ([major isEqual:@"2"]) {
@@ -167,6 +182,9 @@
             [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"ExhibitionStudioDefault"];} completion:nil];
             _inferredInfo.text = @"The Exhibition Center is a place for students and the school to showcase their works and achievements, ranging from art pieces to outstanding ISS (Interdisciplinary Science Studies) projects. This place houses the school's various achievements.\n\nYou can view the SST Corporate Video by tapping your phone on the iBeacon.";
             linkURL = @"http://www.sst.edu.sg/media-centre/sst-corporate-video";
+        }
+        else {
+            goto unimplemented;
         }
         /*else if ([minor isEqual:@"4"]) {
             locationString = [locationString stringByAppendingString:@"ICT Helpdesk"];
@@ -191,7 +209,7 @@
             linkURL = @"";
         }
         else if ([minor isEqual:@"2"]) {
-            locationString = [locationString stringByAppendingString:@"Makerspace / SST Inc"];
+            locationString = [locationString stringByAppendingString:@"SST Inc"];
             [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"MakerspaceDefault"];} completion:nil];
             _inferredInfo.text = @"The SST Makerspace is a fully-equipped learning zone where students can design, prototype and manufacture products. Makerspaces are a fairly new phenomenon, but are beginning to make waves in the field of education. The SST Makerspace represents the democratisation of design, engineering, fabrication and education, and empowers our students with the resources to unleash their creativity.\nThe Makerspace includes the SST Inc room, a room dedicated to makers and tinkerers who want to develop softwares that empower SST and the world, including this app that you are using right now, Places@SST. The background of this screen is the Ideation Tunnel, a place where members of SST Inc discuss their ideas and sketch them out on the glass whiteboards.";
             linkURL = @"";
@@ -207,8 +225,8 @@
             linkURL = @"";
         }
         else {
-            locationString=@"Polling for signals...";
-            linkURL = @"";
+            //locationString=@"Polling...";
+            goto unimplemented;
         }
     }
     // Sports complex
@@ -220,8 +238,9 @@
     }
     else
     {
-        [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"SSTGeneric"];} completion:nil];
+    unimplemented:
         locationString = @"Not Implemented";
+        [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"SSTGeneric"];} completion:nil];
         _inferredInfo.text = @"This location seems to be a new beacon in deployment, but we haven't finished it yet! Look out for new locations in the next release of Places@SST!";
         linkURL = @"";
         NSLog(@"Not implemented beacon with major,minor: %@, %@", major, minor);
