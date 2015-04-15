@@ -29,19 +29,12 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _inferredLocation.adjustsFontSizeToFitWidth = YES;
-    
     inRegion = false;
-    
-    
-    //TODO: Change the default signal level to None
     _signalIndicator.image = [PlacesKit imageOfNone];
-    
     linkURL = @"";
     
-    //TODO: Turn off all BL functionality UNTIL UI is finished
-    
     // Check if bluetooth is on or off
-    [self startBluetoothStatusMonitoring];
+    //[self startBluetoothStatusMonitoring];
     
     // Initialize the location manager
     self.locationManager = [[CLLocationManager alloc] init];

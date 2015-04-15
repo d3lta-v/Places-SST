@@ -23,6 +23,8 @@
     NSString *element;
     
     NSArray *searchResults;
+    
+    NSDateFormatter *dateFormatter;
 }
 
 @end
@@ -83,7 +85,7 @@
         [parser setShouldResolveExternalEntities:NO];
         [parser parse];
         
-        dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        dispatch_sync(dispatch_get_main_queue(), ^(void){
             [(UIRefreshControl *)sender endRefreshing];
             self.tableView.userInteractionEnabled=YES;
         });
@@ -206,9 +208,14 @@
     } else if ([element isEqualToString:@"link"]) {
         [link appendString:string];
     } else if ([element isEqualToString:@"pubDate"]) {
-        [date appendString:string];
+        //[date appendString:string];
         //This will remove the last string in the date (:00 +0000)
-        date = [[date stringByReplacingOccurrencesOfString:@":00 +0000"withString:@""]mutableCopy];
+        //date = [[date stringByReplacingOccurrencesOfString:@":00 +0000"withString:@""]mutableCopy];
+        string = [string stringByReplacingOccurrencesOfString:@":00 +0000" withString:@""];
+        NSDate *newDate = [dateFormatter dateFromString:string];
+        newDate = [newDate dateByAddingTimeInterval:(8*60*60)]; // 8 hours
+        string = [dateFormatter stringFromDate:newDate];
+        [date appendString:string];
     }
     else if ([element isEqualToString:@"author"]) {
         [author appendString:string];
