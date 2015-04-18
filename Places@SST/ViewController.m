@@ -34,12 +34,13 @@
     linkURL = @"";
     
     // Check if bluetooth is on or off
-    //[self startBluetoothStatusMonitoring];
+    [self startBluetoothStatusMonitoring];
     
     // Initialize the location manager
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     [self.locationManager requestAlwaysAuthorization];
+    //self.locationManager.avoidUnknownStateBeacons = YES;
     NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:@"775752A9-F236-4619-9562-84AC9DE124C6"];
     self.myBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID identifier:@"Estimote Region"];
     
@@ -58,6 +59,23 @@
 
 #pragma mark - CLLocationManager delegate
 
+- (void)locationManager:(CLLocationManager*)manager didEnterRegion:(CLRegion*)region
+{
+    // Did enter region
+    NSLog(@"didEnterRegion Triggered!");
+    [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
+}
+
+-(void)locationManager:(CLLocationManager*)manager didExitRegion:(CLRegion*)region
+{
+    // Enter code that states it is out of region now
+    NSLog(@"didExitRegion Triggered! Stopping ranging services...");
+    [self.locationManager stopRangingBeaconsInRegion:self.myBeaconRegion];
+    _signalIndicator.image = [PlacesKit imageOfNone];
+    _inferredLocation.text = @"No Signal";
+    _inferredInfo.text = @"The app detected no Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
+}
+
 - (void) locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
 {
     [self.locationManager requestStateForRegion:self.myBeaconRegion];
@@ -74,14 +92,9 @@
         case CLRegionStateOutside: {
             NSLog(@"Outside region");
             // No beacons are in range
-            //_signalStrength.text = @"No Signal";
             _signalIndicator.image = [PlacesKit imageOfNone];
             _inferredLocation.text = @"No Signal";
             _inferredInfo.text = @"The app detected no Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
-            /*while (!inRegion) {
-                NSLog(@"not in region");
-                [self.locationManager requestStateForRegion:self.myBeaconRegion];
-            }*/
         }
             break;
         case CLRegionStateUnknown:
@@ -140,6 +153,8 @@
         _inferredInfo.text = @"The Bluetooth signal is too weak to determine your accurate position. You might not be in a good iBeacon coverage zone. Please walk around SST to double check your connection.";*/
     }
 }
+
+#pragma mark -
 
 // This will set the text and images accordingly
 // The URLs are also set inside this method
@@ -204,7 +219,7 @@
         else if ([minor isEqual:@"2"]) {
             locationString = [locationString stringByAppendingString:@"SST Inc"];
             [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"MakerspaceDefault"];} completion:nil];
-            _inferredInfo.text = @"The SST Makerspace is a fully-equipped learning zone where students can design, prototype and manufacture products. Makerspaces are a fairly new phenomenon, but are beginning to make waves in the field of education. The SST Makerspace represents the democratisation of design, engineering, fabrication and education, and empowers our students with the resources to unleash their creativity.\nThe Makerspace includes the SST Inc room, a room dedicated to makers and tinkerers who want to develop softwares that empower SST and the world, including this app that you are using right now, Places@SST. The background of this screen is the Ideation Tunnel, a place where members of SST Inc discuss their ideas and sketch them out on the glass whiteboards.";
+            _inferredInfo.text = @"The SST Makerspace is a fully-equipped learning zone where students can design, prototype and manufacture products. Makerspaces are a fairly new phenomenon, but are beginning to make waves in the field of education. The SST Makerspace represents the democratisation of design, engineering, fabrication and education, and empowers our students with the resources to unleash their creativity.\n\nThe Makerspace includes the SST Inc room, a room dedicated to makers and tinkerers who want to develop softwares that empower SST and the world, including this app that you are using right now, Places@SST. The background of this screen is the Ideation Tunnel, a place where members of SST Inc discuss their ideas and sketch them out on the glass whiteboards.";
             linkURL = @"";
         }
         else if ([minor isEqual:@"3"]) {
