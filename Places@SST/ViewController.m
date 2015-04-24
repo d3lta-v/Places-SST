@@ -11,7 +11,7 @@
 #import "PlacesKit.h"
 #import "InAppBrowserViewController.h"
 
-#define kDefaultFontSize 75.0
+//static const int kDefaultFontSize = 75.0;
 
 @interface ViewController ()
 {
@@ -156,6 +156,10 @@
 
 #pragma mark -
 
+-(void)setBackgroundImage:(NSString *)imageName {
+    [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:imageName];} completion:nil];
+}
+
 // This will set the text and images accordingly
 // The URLs are also set inside this method
 -(void)setTextInfoWithMajor:(NSString *)major minor:(NSString *)minor
@@ -165,7 +169,7 @@
     // Admin block
     if ([major isEqual:@"1"]) {
         if ([minor isEqual:@"1"]) {
-            [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"SSTWallDefault"];} completion:nil];
+            [self setBackgroundImage:@"SSTWallDefault"];
             locationString = [locationString stringByAppendingString:@"SST Wall"];
             _inferredInfo.text = @"This is the SST Wall, the most iconic place in the whole of SST. Visitors to SST, from both Singapore and overseas take their group shots where.\n\nTap on the iBeacon to visit the SST website and learn more about SST.";
             linkURL = @"http://www.sst.edu.sg";
@@ -187,38 +191,25 @@
         }*/
         if ([minor isEqual:@"2"]){
             locationString = [locationString stringByAppendingString:@"Exhibition Centre"];
-            [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"ExhibitionStudioDefault"];} completion:nil];
+            [self setBackgroundImage:@"ExhibitionStudioDefault"];
             _inferredInfo.text = @"The Exhibition Center is a place for students and the school to showcase their works and achievements, ranging from art pieces to outstanding ISS (Interdisciplinary Science Studies) projects. This place houses the school's various achievements.\n\nYou can view the SST Corporate Video by tapping your phone on the iBeacon.";
             linkURL = @"http://www.sst.edu.sg/media-centre/sst-corporate-video";
         }
         else {
             goto unimplemented;
         }
-        /*else if ([minor isEqual:@"4"]) {
-            locationString = [locationString stringByAppendingString:@"ICT Helpdesk"];
-            [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"HelpdeskDefault"];} completion:nil];
-            linkURL = @"";
-        }
-        else if ([minor isEqual:@"5"]) {
-            locationString = [locationString stringByAppendingString:@"Café"];
-            linkURL = @"";
-        }
-        else {
-            locationString=@"";
-            linkURL = @"";
-        }*/
     }
     // Block C
     else if ([major isEqual:@"3"]) {
         if ([minor isEqual:@"1"]) {
-            [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"ScienceHubDefault"];} completion:nil];
+            [self setBackgroundImage:@"ScienceHubDefault"];
             locationString = [locationString stringByAppendingString:@"Science Hub"];
-            _inferredInfo.text = @"Opportunities for independent and joint research experimentation abound in our state-of-the-art Science Hub, which comprises twelve laboratories (four dedicated to the Applied Sciences), as well as a tissue culture room, a research lab and an engineering lab.\nThe unique multifunctional NAWIS® system in the Physics laboratories allows for more flexibility and mobility in these spaces. Special research equipment are also available in the laboratories to support students’ explorations in the fields of Analytical Chemistry, Biomedical Sciences and Sensor Technology.";
+            _inferredInfo.text = @"Opportunities for independent and joint research experimentation abound in our state-of-the-art Science Hub, which comprises twelve laboratories (four dedicated to the Applied Sciences), as well as a tissue culture room, a research lab and an engineering lab.\n\nThe unique multifunctional NAWIS® system in the Physics laboratories allows for more flexibility and mobility in these spaces. Special research equipment are also available in the laboratories to support students’ explorations in the fields of Analytical Chemistry, Biomedical Sciences and Sensor Technology.";
             linkURL = @"";
         }
         else if ([minor isEqual:@"2"]) {
             locationString = [locationString stringByAppendingString:@"SST Inc"];
-            [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"MakerspaceDefault"];} completion:nil];
+            [self setBackgroundImage:@"MakerspaceDefault"];
             _inferredInfo.text = @"The SST Makerspace is a fully-equipped learning zone where students can design, prototype and manufacture products. Makerspaces are a fairly new phenomenon, but are beginning to make waves in the field of education. The SST Makerspace represents the democratisation of design, engineering, fabrication and education, and empowers our students with the resources to unleash their creativity.\n\nThe Makerspace includes the SST Inc room, a room dedicated to makers and tinkerers who want to develop softwares that empower SST and the world, including this app that you are using right now, Places@SST. The background of this screen is the Ideation Tunnel, a place where members of SST Inc discuss their ideas and sketch them out on the glass whiteboards.";
             linkURL = @"";
         }
@@ -240,16 +231,16 @@
     // Sports complex
     else if ([major isEqual:@"4"]) {
         locationString = [locationString stringByAppendingString:@"Sports Complex"];
-        [UIView transitionWithView:_bgImg duration:0.4f options: UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"SportsComplexDefault"];} completion:nil];
+        [self setBackgroundImage:@"SportsComplexDefault"];
         _inferredInfo.text = @"The Ngee Ann Kongsi Sports Complex consists of a multi-purpose hall, an indoor sports hall, gym, dance studio, music room and a rooftop basketball court cum running track. Outdoor sports facilities include a synthetic football field and a NAPFA fitness area, in addition to three CCA rooms and a student leader lounge.";
-        linkURL = @"";
+        linkURL = @"http://www.sst.edu.sg/curriculum/sports-and-wellness/";
     }
     else
     {
     unimplemented:
         locationString = @"Not Implemented";
         [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"SSTGeneric"];} completion:nil];
-        _inferredInfo.text = @"This location seems to be a new beacon in deployment, but we haven't finished it yet! Look out for new locations in the next release of Places@SST!";
+        _inferredInfo.text = @"This location seems to be a new beacon in deployment or configuration, but we haven't finished it yet! Look out for new locations in the next release of Places@SST!";
         linkURL = @"";
         NSLog(@"Not implemented beacon with major,minor: %@, %@", major, minor);
     }
