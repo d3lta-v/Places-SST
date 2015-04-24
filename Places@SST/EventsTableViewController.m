@@ -47,6 +47,10 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"en_US_POSIX"]];
+    [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm"];
+    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [SVProgressHUD showWithStatus:@"Loading feeds..." maskType:SVProgressHUDMaskTypeBlack];

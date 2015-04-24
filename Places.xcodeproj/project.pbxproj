@@ -162,7 +162,7 @@
 		229D93761A58DB6500B92A4B /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
 		22C12B6D1ADEB3800074F1F3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22C12B711ADEB3D40074F1F3 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
-		22C453E219CD3FD8007D6292 /* Places@SST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Places@SST.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22C453E219CD3FD8007D6292 /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C453E619CD3FD8007D6292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C453E719CD3FD8007D6292 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22C453E919CD3FD8007D6292 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		22C453ED19CD3FD8007D6292 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		22C453F019CD3FD8007D6292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22C453F219CD3FD8007D6292 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		22C453FB19CD3FD8007D6292 /* Places@SSTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Places@SSTTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22C453FB19CD3FD8007D6292 /* PlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C4540019CD3FD8007D6292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C4540119CD3FD8007D6292 /* Places_SSTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Places_SSTTests.m; sourceTree = "<group>"; };
 		22C4540B19CD5538007D6292 /* NoBluetoothViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoBluetoothViewController.h; sourceTree = "<group>"; };
@@ -312,8 +312,8 @@
 		22C453E319CD3FD8007D6292 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22C453E219CD3FD8007D6292 /* Places@SST.app */,
-				22C453FB19CD3FD8007D6292 /* Places@SSTTests.xctest */,
+				22C453E219CD3FD8007D6292 /* Places.app */,
+				22C453FB19CD3FD8007D6292 /* PlacesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -375,9 +375,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22C453E119CD3FD8007D6292 /* Places@SST */ = {
+		22C453E119CD3FD8007D6292 /* Places */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22C4540519CD3FD8007D6292 /* Build configuration list for PBXNativeTarget "Places@SST" */;
+			buildConfigurationList = 22C4540519CD3FD8007D6292 /* Build configuration list for PBXNativeTarget "Places" */;
 			buildPhases = (
 				22C453DE19CD3FD8007D6292 /* Sources */,
 				22C453DF19CD3FD8007D6292 /* Frameworks */,
@@ -389,14 +389,14 @@
 			);
 			dependencies = (
 			);
-			name = "Places@SST";
+			name = Places;
 			productName = "Places@SST";
-			productReference = 22C453E219CD3FD8007D6292 /* Places@SST.app */;
+			productReference = 22C453E219CD3FD8007D6292 /* Places.app */;
 			productType = "com.apple.product-type.application";
 		};
-		22C453FA19CD3FD8007D6292 /* Places@SSTTests */ = {
+		22C453FA19CD3FD8007D6292 /* PlacesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22C4540819CD3FD8007D6292 /* Build configuration list for PBXNativeTarget "Places@SSTTests" */;
+			buildConfigurationList = 22C4540819CD3FD8007D6292 /* Build configuration list for PBXNativeTarget "PlacesTests" */;
 			buildPhases = (
 				22C453F719CD3FD8007D6292 /* Sources */,
 				22C453F819CD3FD8007D6292 /* Frameworks */,
@@ -407,9 +407,9 @@
 			dependencies = (
 				22C453FD19CD3FD8007D6292 /* PBXTargetDependency */,
 			);
-			name = "Places@SSTTests";
+			name = PlacesTests;
 			productName = "Places@SSTTests";
-			productReference = 22C453FB19CD3FD8007D6292 /* Places@SSTTests.xctest */;
+			productReference = 22C453FB19CD3FD8007D6292 /* PlacesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -436,7 +436,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 22C453DD19CD3FD8007D6292 /* Build configuration list for PBXProject "Places@SST" */;
+			buildConfigurationList = 22C453DD19CD3FD8007D6292 /* Build configuration list for PBXProject "Places" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -473,8 +473,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				22C453E119CD3FD8007D6292 /* Places@SST */,
-				22C453FA19CD3FD8007D6292 /* Places@SSTTests */,
+				22C453E119CD3FD8007D6292 /* Places */,
+				22C453FA19CD3FD8007D6292 /* PlacesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -624,7 +624,7 @@
 /* Begin PBXTargetDependency section */
 		22C453FD19CD3FD8007D6292 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 22C453E119CD3FD8007D6292 /* Places@SST */;
+			target = 22C453E119CD3FD8007D6292 /* Places */;
 			targetProxy = 22C453FC19CD3FD8007D6292 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -760,7 +760,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Places;
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "Places@SST/Externals/DTCoreText/Externals/DTFoundation/Core/** Places@SST/Externals/DTCoreText/Core/**";
 			};
@@ -783,7 +783,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Places;
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "Places@SST/Externals/DTCoreText/Externals/DTFoundation/Core/** Places@SST/Externals/DTCoreText/Core/**";
 			};
@@ -803,8 +803,8 @@
 				);
 				INFOPLIST_FILE = "Places@SSTTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Places@SST.app/Places@SST";
+				PRODUCT_NAME = PlacesTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Places.app/Places";
 			};
 			name = Debug;
 		};
@@ -818,15 +818,15 @@
 				);
 				INFOPLIST_FILE = "Places@SSTTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Places@SST.app/Places@SST";
+				PRODUCT_NAME = PlacesTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Places.app/Places";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22C453DD19CD3FD8007D6292 /* Build configuration list for PBXProject "Places@SST" */ = {
+		22C453DD19CD3FD8007D6292 /* Build configuration list for PBXProject "Places" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22C4540319CD3FD8007D6292 /* Debug */,
@@ -835,7 +835,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22C4540519CD3FD8007D6292 /* Build configuration list for PBXNativeTarget "Places@SST" */ = {
+		22C4540519CD3FD8007D6292 /* Build configuration list for PBXNativeTarget "Places" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22C4540619CD3FD8007D6292 /* Debug */,
@@ -844,7 +844,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22C4540819CD3FD8007D6292 /* Build configuration list for PBXNativeTarget "Places@SSTTests" */ = {
+		22C4540819CD3FD8007D6292 /* Build configuration list for PBXNativeTarget "PlacesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22C4540919CD3FD8007D6292 /* Debug */,
