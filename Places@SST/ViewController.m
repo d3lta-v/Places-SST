@@ -39,13 +39,32 @@
     // Initialize the location manager
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    [self.locationManager requestAlwaysAuthorization];
+    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [self.locationManager requestAlwaysAuthorization];
+    }
+    self.locationManager.pausesLocationUpdatesAutomatically = NO;
     //self.locationManager.avoidUnknownStateBeacons = YES;
     NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:@"775752A9-F236-4619-9562-84AC9DE124C6"];
     self.myBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID identifier:@"Estimote Region"];
     
+    //TODO: Remove debug code on deployment
+    NSArray *locationServicesAuthStatuses = @[@"Not determined",@"Restricted",@"Denied",@"Authorized"];
+    NSArray *backgroundRefreshAuthStatuses = @[@"Restricted",@"Denied",@"Available"];
+    
+    BOOL monitoringAvailable = [CLLocationManager isMonitoringAvailableForClass:[self.myBeaconRegion class]];
+    NSLog(@"Monitoring available: %@", [NSNumber numberWithBool:monitoringAvailable]);
+    
+    int lsAuth = (int)[CLLocationManager authorizationStatus];
+    NSLog(@"Location services authorization status: %@", [locationServicesAuthStatuses objectAtIndex:lsAuth]);
+    
+    int brAuth = (int)[[UIApplication sharedApplication] backgroundRefreshStatus];
+    NSLog(@"Background refresh authorization status: %@", [backgroundRefreshAuthStatuses objectAtIndex:brAuth]);
+    
     // Start monitoring
     [self.locationManager startMonitoringForRegion:self.myBeaconRegion];
+    //[self.locationManager requestStateForRegion:self.myBeaconRegion];
+    [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
+    [self.locationManager startUpdatingLocation];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -72,6 +91,7 @@
     NSLog(@"didExitRegion Triggered! Stopping ranging services...");
     [self.locationManager stopRangingBeaconsInRegion:self.myBeaconRegion];
     _signalIndicator.image = [PlacesKit imageOfNone];
+    [self setBackgroundImage:@"SSTGeneric"];
     _inferredLocation.text = @"No Signal";
     _inferredInfo.text = @"The app detected no Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
 }
@@ -81,7 +101,7 @@
     [self.locationManager requestStateForRegion:self.myBeaconRegion];
 }
 
-- (void) locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
+/*- (void) locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
 {
     switch (state) {
         case CLRegionStateInside: {
@@ -105,52 +125,54 @@
             NSLog(@"Region unknown");
             //[self.locationManager stopRangingBeaconsInRegion:self.myBeaconRegion];
     }
-}
+}*/
 
 - (void) locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
+    NSLog(@"Beacons are now being ranged");
     if ([beacons count]>0) {
-        // Detect amount of beacons in range
-        
         // Get the nearest found beacon
-        //beacons = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity != %d", CLProximityUnknown]];
-        //beacons = [beacons filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"proximity != %d", -1]];
-        //if (beacons.count==0) {
-        //TODO: Finish this catching mechanism
-        if (false) {
-            
-        } else {
-            CLBeacon *foundBeacon = [beacons firstObject];
-            
-            // All the beacon parameters here
-            //NSString *uuid = foundBeacon.proximityUUID.UUIDString;
-            NSString *major = [NSString stringWithFormat:@"%@", foundBeacon.major];
-            NSString *minor = [NSString stringWithFormat:@"%@", foundBeacon.minor];
-            
-            // Get proximity
-            if (foundBeacon.proximity == CLProximityImmediate) { // Tapping the the beacon
+        CLBeacon *foundBeacon = [beacons firstObject];
+        
+        // All the beacon parameters here
+        //NSString *uuid = foundBeacon.proximityUUID.UUIDString;
+        NSString *major = [NSString stringWithFormat:@"%@", foundBeacon.major];
+        NSString *minor = [NSString stringWithFormat:@"%@", foundBeacon.minor];
+        
+        // Clean up proximity data to prevent jumping to and from CLProximityUnknown
+        if(foundBeacon.proximity == self.lastProximity ||
+           foundBeacon.proximity == CLProximityUnknown) {
+            return;
+        }
+        
+        switch(foundBeacon.proximity) {
+            case CLProximityFar:
+                _signalIndicator.image = [PlacesKit imageOfHalf];
+                break;
+            case CLProximityNear:
+                _signalIndicator.image = [PlacesKit imageOfFull];
+                break;
+            case CLProximityImmediate:
                 _signalIndicator.image = [PlacesKit imageOfFull];
                 if (![linkURL isEqualToString:@""]) {
                     // Initiate segue only when linkURL is not empty
                     [self performSegueWithIdentifier:@"ShowDetail" sender:self];
                 }
-            } else if (foundBeacon.proximity == CLProximityNear) { // Near the beacon (strong signal)
-                _signalIndicator.image = [PlacesKit imageOfFull];
-            } else if (foundBeacon.proximity == CLProximityFar) { // (med/weak signal)
-                _signalIndicator.image = [PlacesKit imageOfHalf];
-            } else if (foundBeacon.proximity == CLProximityUnknown) { // (weak/v. weak signal)
-                _signalIndicator.image = [PlacesKit imageOfLow];
-            }
-            
-            // Call the function to automatically set the text
-            [self setTextInfoWithMajor:major minor:minor];
+                break;
+            case CLProximityUnknown:
+                return;
         }
+        
+        // Call the function to automatically set the text
+        [self setTextInfoWithMajor:major minor:minor];
     } else {
-        // Still in region but no good lock on to beacon
-        /*_inferredLocation.text = @"Weak Signal";
+        // Beacon count is zero
+        NSLog(@"No beacons were detected");
+        // No beacons are in range
         _signalIndicator.image = [PlacesKit imageOfNone];
-        [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"SSTGeneric"];} completion:nil];
-        _inferredInfo.text = @"The Bluetooth signal is too weak to determine your accurate position. You might not be in a good iBeacon coverage zone. Please walk around SST to double check your connection.";*/
+        _inferredLocation.text = @"No Signal";
+        _inferredInfo.text = @"The app detected no Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
+        [self setBackgroundImage:@"SSTGeneric"];
     }
 }
 

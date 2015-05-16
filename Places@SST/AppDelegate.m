@@ -27,7 +27,7 @@
     
     // Analytics for Estimote
     [ESTCloudManager setupAppID:@"places-sst" andAppToken:@"9196e81b5b5b44834fb2b1cae67f3bc8"];
-    [ESTCloudManager enableAnalytics:YES];
+    [ESTCloudManager enableMonitoringAnalytics:YES];
     
     // Set status bar color to white
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];

@@ -31,8 +31,8 @@
 		229D935D1A58D57E00B92A4B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229D935C1A58D57E00B92A4B /* CoreText.framework */; };
 		229D935F1A58D58500B92A4B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229D935E1A58D58500B92A4B /* MobileCoreServices.framework */; };
 		229D93901A58DF4C00B92A4B /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 229D93871A58DB6600B92A4B /* libDTCoreText.a */; };
+		229FF3221B071AA30078ED0C /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229FF3211B071AA30078ED0C /* EstimoteSDK.framework */; };
 		22C12B6E1ADEB3800074F1F3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C12B6D1ADEB3800074F1F3 /* SystemConfiguration.framework */; };
-		22C12B721ADEB3D40074F1F3 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C12B711ADEB3D40074F1F3 /* EstimoteSDK.framework */; };
 		22C453E819CD3FD8007D6292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453E719CD3FD8007D6292 /* main.m */; };
 		22C453EB19CD3FD8007D6292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453EA19CD3FD8007D6292 /* AppDelegate.m */; };
 		22C453EE19CD3FD8007D6292 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453ED19CD3FD8007D6292 /* ViewController.m */; };
@@ -160,8 +160,8 @@
 		229D935C1A58D57E00B92A4B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		229D935E1A58D58500B92A4B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		229D93761A58DB6500B92A4B /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
+		229FF3211B071AA30078ED0C /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		22C12B6D1ADEB3800074F1F3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		22C12B711ADEB3D40074F1F3 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		22C453E219CD3FD8007D6292 /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C453E619CD3FD8007D6292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C453E719CD3FD8007D6292 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 				22C915BF1A9C01E100E8AA2A /* Crashlytics.framework in Frameworks */,
 				2256566B19DADE5A007D0702 /* Accelerate.framework in Frameworks */,
 				22C4541119CD5CED007D6292 /* CoreLocation.framework in Frameworks */,
-				22C12B721ADEB3D40074F1F3 /* EstimoteSDK.framework in Frameworks */,
+				229FF3221B071AA30078ED0C /* EstimoteSDK.framework in Frameworks */,
 				22C4540F19CD5CE8007D6292 /* CoreBluetooth.framework in Frameworks */,
 				22C915C01A9C01E100E8AA2A /* Fabric.framework in Frameworks */,
 			);
@@ -291,7 +291,7 @@
 		22C453D919CD3FD8007D6292 = {
 			isa = PBXGroup;
 			children = (
-				22C12B711ADEB3D40074F1F3 /* EstimoteSDK.framework */,
+				229FF3211B071AA30078ED0C /* EstimoteSDK.framework */,
 				22C12B6D1ADEB3800074F1F3 /* SystemConfiguration.framework */,
 				22C915BD1A9C01E100E8AA2A /* Crashlytics.framework */,
 				22C915BE1A9C01E100E8AA2A /* Fabric.framework */,
