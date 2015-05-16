@@ -23,6 +23,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *inferredInfo;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImg;
 @property (weak, nonatomic) IBOutlet UIImageView *signalIndicator;
+@property NSString *lastUsedImage;
 
 @end
-
