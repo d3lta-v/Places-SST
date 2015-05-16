@@ -85,6 +85,7 @@
     // Did enter region
     NSLog(@"didEnterRegion Triggered!");
     [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
+    [self.locationManager startUpdatingLocation];
 }
 
 -(void)locationManager:(CLLocationManager*)manager didExitRegion:(CLRegion*)region
@@ -92,6 +93,7 @@
     // Enter code that states it is out of region now
     NSLog(@"didExitRegion Triggered! Stopping ranging services...");
     [self.locationManager stopRangingBeaconsInRegion:self.myBeaconRegion];
+    [self.locationManager stopUpdatingLocation];
     _signalIndicator.image = [PlacesKit imageOfNone];
     if (![self.lastUsedImage isEqualToString:@"SSTGeneric"]) {
         [self setBackgroundImage:@"SSTGeneric"];
