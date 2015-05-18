@@ -151,6 +151,8 @@
             return;
         }
         
+        
+        
         switch(foundBeacon.proximity) {
             case CLProximityFar:
                 _signalIndicator.image = [PlacesKit imageOfHalf];
@@ -177,7 +179,7 @@
         // No beacons are in range
         _signalIndicator.image = [PlacesKit imageOfNone];
         _inferredLocation.text = @"No Signal";
-        _inferredInfo.text = @"The app detected no Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
+        _inferredInfo.text = @"The app detected no or weak Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
         if (![self.lastUsedImage isEqualToString:@"SSTGeneric"]) {
             [self setBackgroundImage:@"SSTGeneric"];
             self.lastUsedImage = @"SSTGeneric";
