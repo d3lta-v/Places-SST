@@ -11,13 +11,13 @@
 #import <CoreLocation/CoreLocation.h>
 #import <EstimoteSDK/EstimoteSDK.h>
 
-@interface ViewController : UIViewController <CBCentralManagerDelegate, ESTBeaconManagerDelegate>
+@interface ViewController : UIViewController <CLLocationManagerDelegate, CBCentralManagerDelegate, ESTBeaconManagerDelegate>
 
 // Managers
-@property (strong, nonatomic) CLBeaconRegion *beaconRegion;
-@property (strong, nonatomic) ESTBeaconManager *locationManager;
+@property (strong, nonatomic) CLBeaconRegion *myBeaconRegion;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CBCentralManager *bluetoothManager;
-//@property CLProximity lastProximity;
+@property CLProximity lastProximity;
 
 // UI Elements
 @property (weak, nonatomic) IBOutlet UILabel *inferredLocation;

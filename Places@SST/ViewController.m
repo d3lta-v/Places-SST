@@ -17,6 +17,7 @@
 {
     NSString *locationString;
     NSString *linkURL;
+    bool inRegion;
 }
 
 @end
@@ -28,6 +29,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _inferredLocation.adjustsFontSizeToFitWidth = YES;
+    inRegion = false;
     _signalIndicator.image = [PlacesKit imageOfNone];
     linkURL = @"";
     
@@ -35,31 +37,36 @@
     [self startBluetoothStatusMonitoring];
     
     // Initialize the location manager
-    self.locationManager = [[ESTBeaconManager alloc] init];
+    self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-        [self.locationManager requestWhenInUseAuthorization];
-    }
-    //self.locationManager.pausesLocationUpdatesAutomatically = NO;
-    self.locationManager.avoidUnknownStateBeacons = YES;
+    [self.locationManager requestWhenInUseAuthorization];
+    //if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        
+    //}
+    self.locationManager.pausesLocationUpdatesAutomatically = NO;
+    //self.locationManager.avoidUnknownStateBeacons = YES;
     NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:@"775752A9-F236-4619-9562-84AC9DE124C6"];
-    self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID identifier:@"Estimote Region"];
+    self.myBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID identifier:@"Estimote Region"];
     
     //TODO: Remove debug code on deployment
-    NSArray *locationServicesAuthStatuses = @[@"Not determined",@"Restricted",@"Denied",@"Authorized"];
+    /*NSArray *locationServicesAuthStatuses = @[@"Not determined",@"Restricted",@"Denied",@"Authorized"];
+    NSArray *backgroundRefreshAuthStatuses = @[@"Restricted",@"Denied",@"Available"];
     
-    BOOL monitoringAvailable = [CLLocationManager isMonitoringAvailableForClass:[self.beaconRegion class]];
+    BOOL monitoringAvailable = [CLLocationManager isMonitoringAvailableForClass:[self.myBeaconRegion class]];
     NSLog(@"Monitoring available: %@", [NSNumber numberWithBool:monitoringAvailable]);
     
     int lsAuth = (int)[CLLocationManager authorizationStatus];
     NSLog(@"Location services authorization status: %@", [locationServicesAuthStatuses objectAtIndex:lsAuth]);
     
+    int brAuth = (int)[[UIApplication sharedApplication] backgroundRefreshStatus];
+    NSLog(@"Background refresh authorization status: %@", [backgroundRefreshAuthStatuses objectAtIndex:brAuth]);*/
+    
     self.lastUsedImage = @"SSTGeneric";
     
     // Start monitoring
-    //[self.locationManager startMonitoringForRegion:self.beaconRegion];
-    //[self.locationManager requestStateForRegion:self.beaconRegion];
-    [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
+    //[self.locationManager startMonitoringForRegion:self.myBeaconRegion];
+    //[self.locationManager requestStateForRegion:self.myBeaconRegion];
+    [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
     //[self.locationManager startUpdatingLocation];
 }
 
@@ -72,35 +79,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - CLLocationManager/ESTBeaconManager delegate
-/*
-- (void)locationManager:(CLLocationManager*)manager didEnterRegion:(CLRegion*)region
-{
-    // Did enter region
-    NSLog(@"didEnterRegion Triggered!");
-    [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
-    [self.locationManager startUpdatingLocation];
-}
-
--(void)locationManager:(CLLocationManager*)manager didExitRegion:(CLRegion*)region
-{
-    // Enter code that states it is out of region now
-    NSLog(@"didExitRegion Triggered! Stopping ranging services...");
-    [self.locationManager stopRangingBeaconsInRegion:self.beaconRegion];
-    [self.locationManager stopUpdatingLocation];
-    _signalIndicator.image = [PlacesKit imageOfNone];
-    if (![self.lastUsedImage isEqualToString:@"SSTGeneric"]) {
-        [self setBackgroundImage:@"SSTGeneric"];
-        self.lastUsedImage = @"SSTGeneric";
-    }
-    _inferredLocation.text = @"No Signal";
-    _inferredInfo.text = @"The app detected no Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
-}
-
-- (void) locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
-{
-    [self.locationManager requestStateForRegion:self.myBeaconRegion];
-}*/
+#pragma mark - CLLocationManager delegate
 
 /*- (void) locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
 {
@@ -128,10 +107,9 @@
     }
 }*/
 
-- (void) locationManager:(id)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
+- (void) locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
     if ([beacons count]>0) {
-        NSLog(@"[INFO] Beacon is detected");
         // Get the nearest found beacon
         CLBeacon *foundBeacon = [beacons firstObject];
         
@@ -141,10 +119,10 @@
         NSString *minor = [NSString stringWithFormat:@"%@", foundBeacon.minor];
         
         // Clean up proximity data to prevent jumping to and from CLProximityUnknown
-        /*if(foundBeacon.proximity == self.lastProximity ||
+        if(foundBeacon.proximity == self.lastProximity ||
            foundBeacon.proximity == CLProximityUnknown) {
             return;
-        }*/ // This is taken care of by ESTBeaconManager
+        }
         
         switch(foundBeacon.proximity) {
             case CLProximityFar:
@@ -168,7 +146,7 @@
         [self setTextInfoWithMajor:major minor:minor];
     } else {
         // Beacon count is zero
-        NSLog(@"[INFO] No beacons were detected");
+        NSLog(@"No beacons were detected");
         // No beacons are in range
         _signalIndicator.image = [PlacesKit imageOfNone];
         _inferredLocation.text = @"No Signal";
