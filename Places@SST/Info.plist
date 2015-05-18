@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>10000028</string>
+	<string>10000034</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -36,13 +36,12 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This app uses Bluetooth 4.0 BLE technology to retrieve your location in SST and since we need to deliver push notifications to you, the app needs to always use your location. This app uses only Bluetooth and no GPS.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app uses Bluetooth 4.0 BLE technology to retrieve your location in SST. This app uses only Bluetooth and no GPS.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>
 		<string>bluetooth-peripheral</string>
-		<string>location</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
