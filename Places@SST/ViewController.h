@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import <CoreLocation/CoreLocation.h>
-#import <EstimoteSDK/EstimoteSDK.h>
 
-@interface ViewController : UIViewController <CLLocationManagerDelegate, CBCentralManagerDelegate, ESTBeaconManagerDelegate>
+@interface ViewController : UIViewController <CLLocationManagerDelegate, CBCentralManagerDelegate>
 
 // Managers
 @property (strong, nonatomic) CLBeaconRegion *myBeaconRegion;

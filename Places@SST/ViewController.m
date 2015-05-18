@@ -39,7 +39,7 @@
     // Initialize the location manager
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    [self.locationManager requestWhenInUseAuthorization];
+    
     //if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
         
     //}
@@ -48,20 +48,9 @@
     NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:@"775752A9-F236-4619-9562-84AC9DE124C6"];
     self.myBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID identifier:@"Estimote Region"];
     
-    //TODO: Remove debug code on deployment
-    /*NSArray *locationServicesAuthStatuses = @[@"Not determined",@"Restricted",@"Denied",@"Authorized"];
-    NSArray *backgroundRefreshAuthStatuses = @[@"Restricted",@"Denied",@"Available"];
-    
-    BOOL monitoringAvailable = [CLLocationManager isMonitoringAvailableForClass:[self.myBeaconRegion class]];
-    NSLog(@"Monitoring available: %@", [NSNumber numberWithBool:monitoringAvailable]);
-    
-    int lsAuth = (int)[CLLocationManager authorizationStatus];
-    NSLog(@"Location services authorization status: %@", [locationServicesAuthStatuses objectAtIndex:lsAuth]);
-    
-    int brAuth = (int)[[UIApplication sharedApplication] backgroundRefreshStatus];
-    NSLog(@"Background refresh authorization status: %@", [backgroundRefreshAuthStatuses objectAtIndex:brAuth]);*/
-    
     self.lastUsedImage = @"SSTGeneric";
+    
+    [self.locationManager requestWhenInUseAuthorization];
     
     // Start monitoring
     //[self.locationManager startMonitoringForRegion:self.myBeaconRegion];
@@ -107,7 +96,7 @@
     }
 }*/
 
-- (void) locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
+- (void) locationManager:(id)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
     if ([beacons count]>0) {
         // Get the nearest found beacon
