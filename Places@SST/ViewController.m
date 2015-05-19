@@ -26,12 +26,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
+    // Initialize text and image views
     _inferredLocation.adjustsFontSizeToFitWidth = YES;
     inRegion = false;
     _signalIndicator.image = [PlacesKit imageOfNone];
     linkURL = @"";
+    
+    self.beaconDisconnectInteger = 0;
     
     // Check if bluetooth is on or off
     [self startBluetoothStatusMonitoring];
@@ -40,9 +42,6 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     
-    //if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-        
-    //}
     self.locationManager.pausesLocationUpdatesAutomatically = NO;
     //self.locationManager.avoidUnknownStateBeacons = YES;
     NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:@"775752A9-F236-4619-9562-84AC9DE124C6"];
@@ -50,11 +49,11 @@
     
     self.lastUsedImage = @"SSTGeneric";
     
-    [self.locationManager requestWhenInUseAuthorization];
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
     
     // Start monitoring
-    //[self.locationManager startMonitoringForRegion:self.myBeaconRegion];
-    //[self.locationManager requestStateForRegion:self.myBeaconRegion];
     [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
     //[self.locationManager startUpdatingLocation];
 }
@@ -70,35 +69,12 @@
 
 #pragma mark - CLLocationManager delegate
 
-/*- (void) locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
-{
-    switch (state) {
-        case CLRegionStateInside: {
-            NSLog(@"Inside region, beginning ranging");
-            [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
-        }
-            break;
-        case CLRegionStateOutside: {
-            NSLog(@"Outside region");
-            // No beacons are in range
-            _signalIndicator.image = [PlacesKit imageOfNone];
-            _inferredLocation.text = @"No Signal";
-            _inferredInfo.text = @"The app detected no Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
-        }
-            break;
-        case CLRegionStateUnknown:
-            NSLog(@"State unknown");
-            break;
-        default:
-            // stop ranging beacons, etc
-            NSLog(@"Region unknown");
-            //[self.locationManager stopRangingBeaconsInRegion:self.myBeaconRegion];
-    }
-}*/
-
 - (void) locationManager:(id)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
     if ([beacons count]>0) {
+        // Reset beacon disconnect counter
+        self.beaconDisconnectInteger = 0;
+        
         // Get the nearest found beacon
         CLBeacon *foundBeacon = [beacons firstObject];
         
@@ -136,13 +112,19 @@
     } else {
         // Beacon count is zero
         NSLog(@"No beacons were detected");
-        // No beacons are in range
-        _signalIndicator.image = [PlacesKit imageOfNone];
-        _inferredLocation.text = @"No Signal";
-        _inferredInfo.text = @"The app detected no or weak Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
-        if (![self.lastUsedImage isEqualToString:@"SSTGeneric"]) {
-            [self setBackgroundImage:@"SSTGeneric"];
-            self.lastUsedImage = @"SSTGeneric";
+        
+        // Implement smoothing algorithm, by incrementing an NSUInteger (current disconnect message trigger requires 6 polls AKA 6 seconds)
+        if (self.beaconDisconnectInteger == 6) {
+            // No beacons are in range
+            _signalIndicator.image = [PlacesKit imageOfNone];
+            _inferredLocation.text = @"No Signal";
+            _inferredInfo.text = @"The app detected no or weak Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
+            if (![self.lastUsedImage isEqualToString:@"SSTGeneric"]) {
+                [self setBackgroundImage:@"SSTGeneric"];
+                self.lastUsedImage = @"SSTGeneric";
+            }
+        } else {
+            self.beaconDisconnectInteger++;
         }
     }
 }

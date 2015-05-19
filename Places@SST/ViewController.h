@@ -17,6 +17,7 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CBCentralManager *bluetoothManager;
 @property CLProximity lastProximity;
+@property short beaconDisconnectInteger;
 
 // UI Elements
 @property (weak, nonatomic) IBOutlet UILabel *inferredLocation;
