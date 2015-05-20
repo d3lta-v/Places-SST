@@ -39,14 +39,14 @@
     // Initialize text and image views
     _inferredLocation.adjustsFontSizeToFitWidth = YES;
     inRegion = false;
-    _signalIndicator.image = [self applySignal:3];
+    _signalIndicator.image = [self applySignal:0];
     
     linkURL = @"";
     
     self.beaconDisconnectInteger = 0;
     
     // Check if bluetooth is on or off
-    //[self startBluetoothStatusMonitoring];
+    [self startBluetoothStatusMonitoring];
     
     //_inferredLocation.text = @"Beta Labs";
     
