@@ -507,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hu4-sx-TU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3541" y="-872"/>
+            <point key="canvasLocation" x="4445" y="305"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g4e-18-vBA">
@@ -527,7 +527,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tcz-bU-Doo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2614" y="-872"/>
+            <point key="canvasLocation" x="3541" y="305"/>
         </scene>
     </scenes>
     <resources>

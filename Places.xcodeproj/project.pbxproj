@@ -13,7 +13,6 @@
 		22535D761B0CA76C008C983D /* Main~3.5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22535D751B0CA76C008C983D /* Main~3.5.storyboard */; };
 		2256566B19DADE5A007D0702 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2256566A19DADE5A007D0702 /* Accelerate.framework */; };
 		227F58EB1A4AE17C00FCB2E9 /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */; };
-		227F58EE1A4AEFDE00FCB2E9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227F58ED1A4AEFDE00FCB2E9 /* AboutViewController.m */; };
 		229D8F001A579B6D00B92A4B /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D8EFB1A579B6D00B92A4B /* SVIndefiniteAnimatedView.m */; };
 		229D8F011A579B6D00B92A4B /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 229D8EFD1A579B6D00B92A4B /* SVProgressHUD.bundle */; };
 		229D8F021A579B6D00B92A4B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D8EFF1A579B6D00B92A4B /* SVProgressHUD.m */; };
@@ -116,8 +115,6 @@
 		2256566A19DADE5A007D0702 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		227F58E91A4AE17C00FCB2E9 /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
 		227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
-		227F58EC1A4AEFDE00FCB2E9 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		227F58ED1A4AEFDE00FCB2E9 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		229D8EFA1A579B6D00B92A4B /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		229D8EFB1A579B6D00B92A4B /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		229D8EFC1A579B6D00B92A4B /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
@@ -331,8 +328,6 @@
 				229D8F141A57A7E500B92A4B /* WebViewController.m */,
 				22E813FE1A59409700B09802 /* InAppBrowserViewController.h */,
 				22E813FF1A59409700B09802 /* InAppBrowserViewController.m */,
-				227F58EC1A4AEFDE00FCB2E9 /* AboutViewController.h */,
-				227F58ED1A4AEFDE00FCB2E9 /* AboutViewController.m */,
 				22C4540B19CD5538007D6292 /* NoBluetoothViewController.h */,
 				22C4540C19CD5538007D6292 /* NoBluetoothViewController.m */,
 				22535D751B0CA76C008C983D /* Main~3.5.storyboard */,
@@ -604,7 +599,6 @@
 				229D8F151A57A7E500B92A4B /* WebViewController.m in Sources */,
 				22C453EB19CD3FD8007D6292 /* AppDelegate.m in Sources */,
 				229D8F001A579B6D00B92A4B /* SVIndefiniteAnimatedView.m in Sources */,
-				227F58EE1A4AEFDE00FCB2E9 /* AboutViewController.m in Sources */,
 				229D8F021A579B6D00B92A4B /* SVProgressHUD.m in Sources */,
 				229D8F121A579DC600B92A4B /* SIMUXCRParser.m in Sources */,
 				221CD2771A37263100CECF74 /* PlacesKit.m in Sources */,

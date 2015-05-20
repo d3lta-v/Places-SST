@@ -8,12 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "ViewController.h"
-#import "PlacesKit.h"
 
 @interface Places_SSTTests : XCTestCase
-
-@property (nonatomic) ViewController *firstVCTest;
 
 @end
 
@@ -22,7 +18,6 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    self.firstVCTest = [ViewController new];
 }
 
 - (void)tearDown {
@@ -34,13 +29,5 @@
     // This is an example of a functional test case.
     XCTAssert(YES, @"passed");
 }
-
--(void)testSignalImage {
-    UIImage *image0 = [self.firstVCTest applySignal:0];
-    UIImage *expectedImage0 = [PlacesKit imageOfNone];
-    
-    XCTAssertEqualObjects(image0, expectedImage0, @"Expected image 0, or image of none");
-}
-
 
 @end
