@@ -1,18 +1,28 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
       "filename" : "SportsComplex@2x.jpg"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "3x",
       "filename" : "SportsComplex@3x.jpg"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "filename" : "Sports~iPad.jpg"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "filename" : "Sports~iPad@2x.jpg"
     }
   ],
   "info" : {

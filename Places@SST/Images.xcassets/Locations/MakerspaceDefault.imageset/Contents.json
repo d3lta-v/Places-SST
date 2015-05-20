@@ -1,18 +1,28 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x",
       "filename" : "Makerspace@2x.jpg"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "3x",
       "filename" : "Makerspace@3x.jpg"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "filename" : "SSTInc~iPad.jpg"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "filename" : "SSTInc~iPad@2x.jpg"
     }
   ],
   "info" : {

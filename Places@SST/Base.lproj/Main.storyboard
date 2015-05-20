@@ -27,13 +27,13 @@
                                     <constraint firstAttribute="width" secondItem="1Yh-cZ-Eqf" secondAttribute="height" multiplier="1:1" id="PZd-9C-wZG"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Polling..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="182" translatesAutoresizingMaskIntoConstraints="NO" id="MMW-dg-2af" userLabel="inferredLocation">
-                                <rect key="frame" x="69" y="177" width="182" height="83"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Polling..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="175" translatesAutoresizingMaskIntoConstraints="NO" id="MMW-dg-2af" userLabel="inferredLocation">
+                                <rect key="frame" x="73" y="177" width="175" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="7WW-Be-V0u"/>
-                                    <constraint firstAttribute="width" constant="182" id="vR2-36-15i"/>
+                                    <constraint firstAttribute="width" constant="175" id="vR2-36-15i"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -76,7 +76,6 @@
                         <outlet property="inferredInfo" destination="pnN-FA-4I4" id="2HM-Ww-dDx"/>
                         <outlet property="inferredLocation" destination="MMW-dg-2af" id="3c3-gs-xYN"/>
                         <outlet property="signalIndicator" destination="1Yh-cZ-Eqf" id="rYc-Rt-sMA"/>
-                        <segue destination="V6t-mF-hUj" kind="presentation" identifier="NoBluetoothSegue" modalTransitionStyle="coverVertical" id="3vY-x3-Ryl"/>
                         <segue destination="5zI-r4-3K4" kind="presentation" identifier="ShowDetail" id="W93-IE-pq7"/>
                     </connections>
                 </viewController>
@@ -96,7 +95,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AboutBG_iPhone" translatesAutoresizingMaskIntoConstraints="NO" id="p2Z-eZ-lg5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AboutBG" translatesAutoresizingMaskIntoConstraints="NO" id="p2Z-eZ-lg5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Square" translatesAutoresizingMaskIntoConstraints="NO" id="KgR-9T-U2R">
@@ -119,8 +118,8 @@
                                 <color key="textColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chief Idealator, Designer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-N2-3jP">
-                                <rect key="frame" x="71" y="276" width="178" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chief Idealator, UI Designer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-N2-3jP">
+                                <rect key="frame" x="61" y="276" width="198" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -214,6 +213,7 @@
                         <segue destination="EbJ-gA-sVZ" kind="relationship" relationship="viewControllers" id="0JB-50-52D"/>
                         <segue destination="kOf-7H-lXi" kind="relationship" relationship="viewControllers" id="iaK-1Y-ttP"/>
                         <segue destination="IUR-1Y-b4e" kind="relationship" relationship="viewControllers" id="bPY-Fl-KjH"/>
+                        <segue destination="V6t-mF-hUj" kind="presentation" identifier="NoBluetoothSegue" id="ycN-Jr-CTh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWm-rT-maa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,7 +235,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8E-sI-fGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="313"/>
+            <point key="canvasLocation" x="1198" y="1030"/>
         </scene>
         <!--No Bluetooth Available-->
         <scene sceneID="P3r-ty-W4U">
@@ -288,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRy-Xt-uFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2082" y="313"/>
+            <point key="canvasLocation" x="1646" y="1030"/>
         </scene>
         <!--Events-->
         <scene sceneID="Hdw-Xn-hd9">
@@ -564,11 +564,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LM3-s6-a25" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="-344"/>
+            <point key="canvasLocation" x="1646" y="-344"/>
         </scene>
     </scenes>
     <resources>
-        <image name="AboutBG_iPhone" width="375" height="667"/>
+        <image name="AboutBG" width="375" height="667"/>
         <image name="AboutTab" width="30" height="30"/>
         <image name="EventsTab" width="30" height="30"/>
         <image name="NoBluetooth" width="153" height="290"/>

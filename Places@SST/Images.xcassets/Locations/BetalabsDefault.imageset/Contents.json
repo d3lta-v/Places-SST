@@ -1,16 +1,28 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
-      "scale" : "2x"
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "filename" : "BetaLab@2x.jpg"
     },
     {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "filename" : "BetaLab@3x.jpg"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "filename" : "BetaLabs~iPad.jpg"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "filename" : "BetaLabs~iPad@2x.jpg"
     }
   ],
   "info" : {

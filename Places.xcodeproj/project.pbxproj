@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		221CD2771A37263100CECF74 /* PlacesKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CD2761A37263100CECF74 /* PlacesKit.m */; };
 		2247AE2F1A9A209E008152AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2247AE2E1A9A209E008152AA /* LaunchScreen.xib */; };
+		22535D741B0B6523008C983D /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22535D731B0B6522008C983D /* Main~iPad.storyboard */; };
+		22535D761B0CA76C008C983D /* Main~3.5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22535D751B0CA76C008C983D /* Main~3.5.storyboard */; };
 		2256566B19DADE5A007D0702 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2256566A19DADE5A007D0702 /* Accelerate.framework */; };
 		227F58EB1A4AE17C00FCB2E9 /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */; };
 		227F58EE1A4AEFDE00FCB2E9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227F58ED1A4AEFDE00FCB2E9 /* AboutViewController.m */; };
@@ -31,7 +33,6 @@
 		229D935D1A58D57E00B92A4B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229D935C1A58D57E00B92A4B /* CoreText.framework */; };
 		229D935F1A58D58500B92A4B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229D935E1A58D58500B92A4B /* MobileCoreServices.framework */; };
 		229D93901A58DF4C00B92A4B /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 229D93871A58DB6600B92A4B /* libDTCoreText.a */; };
-		229FF3221B071AA30078ED0C /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229FF3211B071AA30078ED0C /* EstimoteSDK.framework */; };
 		22C12B6E1ADEB3800074F1F3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C12B6D1ADEB3800074F1F3 /* SystemConfiguration.framework */; };
 		22C453E819CD3FD8007D6292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453E719CD3FD8007D6292 /* main.m */; };
 		22C453EB19CD3FD8007D6292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453EA19CD3FD8007D6292 /* AppDelegate.m */; };
@@ -110,6 +111,8 @@
 		221CD2751A37263100CECF74 /* PlacesKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesKit.h; sourceTree = "<group>"; };
 		221CD2761A37263100CECF74 /* PlacesKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesKit.m; sourceTree = "<group>"; };
 		2247AE2E1A9A209E008152AA /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../LaunchScreen.xib; sourceTree = "<group>"; };
+		22535D731B0B6522008C983D /* Main~iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~iPad.storyboard"; sourceTree = "<group>"; };
+		22535D751B0CA76C008C983D /* Main~3.5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~3.5.storyboard"; sourceTree = "<group>"; };
 		2256566A19DADE5A007D0702 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		227F58E91A4AE17C00FCB2E9 /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
 		227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
@@ -160,7 +163,6 @@
 		229D935C1A58D57E00B92A4B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		229D935E1A58D58500B92A4B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		229D93761A58DB6500B92A4B /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
-		229FF3211B071AA30078ED0C /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		22C12B6D1ADEB3800074F1F3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22C453E219CD3FD8007D6292 /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C453E619CD3FD8007D6292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,7 +201,6 @@
 				22C915BF1A9C01E100E8AA2A /* Crashlytics.framework in Frameworks */,
 				2256566B19DADE5A007D0702 /* Accelerate.framework in Frameworks */,
 				22C4541119CD5CED007D6292 /* CoreLocation.framework in Frameworks */,
-				229FF3221B071AA30078ED0C /* EstimoteSDK.framework in Frameworks */,
 				22C4540F19CD5CE8007D6292 /* CoreBluetooth.framework in Frameworks */,
 				22C915C01A9C01E100E8AA2A /* Fabric.framework in Frameworks */,
 			);
@@ -291,7 +292,6 @@
 		22C453D919CD3FD8007D6292 = {
 			isa = PBXGroup;
 			children = (
-				229FF3211B071AA30078ED0C /* EstimoteSDK.framework */,
 				22C12B6D1ADEB3800074F1F3 /* SystemConfiguration.framework */,
 				22C915BD1A9C01E100E8AA2A /* Crashlytics.framework */,
 				22C915BE1A9C01E100E8AA2A /* Fabric.framework */,
@@ -335,7 +335,9 @@
 				227F58ED1A4AEFDE00FCB2E9 /* AboutViewController.m */,
 				22C4540B19CD5538007D6292 /* NoBluetoothViewController.h */,
 				22C4540C19CD5538007D6292 /* NoBluetoothViewController.m */,
+				22535D751B0CA76C008C983D /* Main~3.5.storyboard */,
 				22C453EF19CD3FD8007D6292 /* Main.storyboard */,
+				22535D731B0B6522008C983D /* Main~iPad.storyboard */,
 				22C453F219CD3FD8007D6292 /* Images.xcassets */,
 				2247AE2E1A9A209E008152AA /* LaunchScreen.xib */,
 				229D8EF81A579B6D00B92A4B /* Externals */,
@@ -536,6 +538,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22535D761B0CA76C008C983D /* Main~3.5.storyboard in Resources */,
+				22535D741B0B6523008C983D /* Main~iPad.storyboard in Resources */,
 				229D934C1A58300D00B92A4B /* Safari~ipad.png in Resources */,
 				229D93481A58300D00B92A4B /* TUSafariActivity.strings in Resources */,
 				2247AE2F1A9A209E008152AA /* LaunchScreen.xib in Resources */,
@@ -762,6 +766,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Places;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "Places@SST/Externals/DTCoreText/Externals/DTFoundation/Core/** Places@SST/Externals/DTCoreText/Core/**";
 			};
 			name = Debug;
@@ -785,6 +790,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Places;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "Places@SST/Externals/DTCoreText/Externals/DTFoundation/Core/** Places@SST/Externals/DTCoreText/Core/**";
 			};
 			name = Release;

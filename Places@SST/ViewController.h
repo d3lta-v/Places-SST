@@ -26,4 +26,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *signalIndicator;
 @property NSString *lastUsedImage;
 
+-(UIImage *)applySignal:(short)imageId;
+
 @end

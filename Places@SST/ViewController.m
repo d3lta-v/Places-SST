@@ -11,18 +11,27 @@
 #import "PlacesKit.h"
 #import "InAppBrowserViewController.h"
 
-//static const int kDefaultFontSize = 75.0;
-
 @interface ViewController ()
 {
     NSString *locationString;
     NSString *linkURL;
     bool inRegion;
+    
+    BOOL iPadIsUsed;
 }
 
 @end
 
 @implementation ViewController
+
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        // Initialization code
+        iPadIsUsed = UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad; // Initialization of a run-time constant
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,20 +39,22 @@
     // Initialize text and image views
     _inferredLocation.adjustsFontSizeToFitWidth = YES;
     inRegion = false;
-    _signalIndicator.image = [PlacesKit imageOfNone];
+    _signalIndicator.image = [self applySignal:3];
+    
     linkURL = @"";
     
     self.beaconDisconnectInteger = 0;
     
     // Check if bluetooth is on or off
-    [self startBluetoothStatusMonitoring];
+    //[self startBluetoothStatusMonitoring];
+    
+    //_inferredLocation.text = @"Beta Labs";
     
     // Initialize the location manager
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     
     self.locationManager.pausesLocationUpdatesAutomatically = NO;
-    //self.locationManager.avoidUnknownStateBeacons = YES;
     NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:@"775752A9-F236-4619-9562-84AC9DE124C6"];
     self.myBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID identifier:@"Estimote Region"];
     
@@ -91,13 +102,13 @@
         
         switch(foundBeacon.proximity) {
             case CLProximityFar:
-                _signalIndicator.image = [PlacesKit imageOfHalf];
+                _signalIndicator.image = [self applySignal:2];
                 break;
             case CLProximityNear:
-                _signalIndicator.image = [PlacesKit imageOfFull];
+                _signalIndicator.image = [self applySignal:3];
                 break;
             case CLProximityImmediate:
-                _signalIndicator.image = [PlacesKit imageOfFull];
+                _signalIndicator.image = [self applySignal:3];
                 if (![linkURL isEqualToString:@""]) {
                     // Initiate segue only when linkURL is not empty
                     [self performSegueWithIdentifier:@"ShowDetail" sender:self];
@@ -113,8 +124,8 @@
         // Beacon count is zero
         NSLog(@"No beacons were detected");
         
-        // Implement smoothing algorithm, by incrementing an NSUInteger (current disconnect message trigger requires 6 polls AKA 6 seconds)
-        if (self.beaconDisconnectInteger == 6) {
+        // Implement smoothing algorithm, by incrementing an NSUInteger (current disconnect message trigger requires 7 polls AKA 7 seconds)
+        if (self.beaconDisconnectInteger >= 7) { //Greater than or equal to, to prevent accidental overshoot of integer
             // No beacons are in range
             _signalIndicator.image = [PlacesKit imageOfNone];
             _inferredLocation.text = @"No Signal";
@@ -130,6 +141,58 @@
 }
 
 #pragma mark -
+
+-(UIImage *)applySignal:(short)imageId {
+    // Image ID is as below:
+    // 0 is none
+    // 1 is low
+    // 2 is half
+    // 3 is full
+    
+    if (iPadIsUsed) {
+        switch (imageId) {
+            case 0:
+                return [PlacesKit imageOfNone_iPad];
+                break;
+                
+            case 1:
+                return [PlacesKit imageOfLow_iPad];
+                break;
+                
+            case 2:
+                return [PlacesKit imageOfHalf_iPad];
+                break;
+                
+            case 3:
+                return [PlacesKit imageOfFull_iPad];
+                
+            default:
+                return [PlacesKit imageOfNone_iPad];
+                break;
+        }
+    } else {
+        switch (imageId) {
+            case 0:
+                return [PlacesKit imageOfNone];
+                break;
+                
+            case 1:
+                return [PlacesKit imageOfLow];
+                break;
+                
+            case 2:
+                return [PlacesKit imageOfHalf];
+                break;
+                
+            case 3:
+                return [PlacesKit imageOfFull];
+                
+            default:
+                return [PlacesKit imageOfNone];
+                break;
+        }
+    }
+}
 
 -(void)setBackgroundImage:(NSString *)imageName {
     [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:imageName];} completion:nil];
@@ -149,7 +212,7 @@
                 self.lastUsedImage = @"SSTWallDefault";
             }
             locationString = [locationString stringByAppendingString:@"SST Wall"];
-            _inferredInfo.text = @"This is the SST Wall, the most iconic place in the whole of SST. Visitors to SST, from both Singapore and overseas take their group shots where.\n\nTap on the iBeacon to visit the SST website and learn more about SST.";
+            _inferredInfo.text = @"This is the SST Wall, Visitors to SST, from both Singapore and overseas take their group shots here.\n\nTap on the iBeacon to visit the SST website and learn more about SST.";
             linkURL = @"http://www.sst.edu.sg";
         }
         /*else if ([minor isEqual:@"2"]) {
@@ -197,16 +260,24 @@
                 [self setBackgroundImage:@"MakerspaceDefault"];
                 self.lastUsedImage = @"MakerspaceDefault";
             }
-            _inferredInfo.text = @"The SST Makerspace is a fully-equipped learning zone where students can design, prototype and manufacture products. Makerspaces are a fairly new phenomenon, but are beginning to make waves in the field of education. The SST Makerspace represents the democratisation of design, engineering, fabrication and education, and empowers our students with the resources to unleash their creativity.\n\nThe Makerspace includes the SST Inc room, a room dedicated to makers and tinkerers who want to develop softwares that empower SST and the world, including this app that you are using right now, Places@SST. The background of this screen is the Ideation Tunnel, a place where members of SST Inc discuss their ideas and sketch them out on the glass whiteboards.";
+            _inferredInfo.text = @"The SST Makerspace is a fully-equipped learning zone where students can design, prototype and manufacture products. Makerspaces are a fairly new phenomenon, but are beginning to make waves in the field of education. The SST Makerspace represents the democratisation of design, engineering, fabrication and education, and empowers our students with the resources to unleash their creativity.\n\nThe Makerspace includes the SST Inc room, a room dedicated to makers and tinkerers who want to develop softwares that empower SST and the world, including this app that you are using right now, Places@SST. The background of this screen is the Ideation Tunnel, a place where members of SST Inc discuss their ideas and sketch them out on the glass whiteboards.\n\nTap on the beacon to access the SST Inc website.";
             linkURL = @"";
         }
         else if ([minor isEqual:@"3"]) {
             locationString = [locationString stringByAppendingString:@"Beta Labs"];
+            if (![self.lastUsedImage isEqualToString:@"BetaLabsDefault"]) {
+                [self setBackgroundImage:@"BetaLabsDefault"];
+                self.lastUsedImage = @"BetaLabsDefault";
+            }
             _inferredInfo.text = @"The Beta Lab is a new generation classroom concept of what a future classroom should be like. Currently adopted in tertiary institutes in Singapore, the room facilitates collaboration and small group discussions due to the integration of technology within its layout.";
             linkURL = @"";
         }
         else if ([minor isEqual:@"4"]) {
             locationString = [locationString stringByAppendingString:@"Robotics Room"];
+            /*if (![self.lastUsedImage isEqualToString:@"RoboticsDefault"]) {
+                [self setBackgroundImage:@"RoboticsDefault"];
+                self.lastUsedImage = @"RoboticsDefault";
+             }*/
             _inferredInfo.text = @"";
             linkURL = @"";
         }
@@ -247,11 +318,11 @@
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
     if ([central state] == CBCentralManagerStatePoweredOn) {
         //bluetoothEnabled = YES
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
     }
     else {
         //bluetoothEnabled = NO;
-        [self performSegueWithIdentifier:@"NoBluetoothSegue" sender:self];
+        [self.tabBarController performSegueWithIdentifier:@"NoBluetoothSegue" sender:self.tabBarController];
     }
 }
 

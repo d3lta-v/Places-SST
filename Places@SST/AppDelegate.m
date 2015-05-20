@@ -10,7 +10,6 @@
 
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
-#import <EstimoteSDK/EstimoteSDK.h>
 
 @interface AppDelegate ()
 
@@ -25,9 +24,15 @@
     // Initialize Fabric
     [Fabric with:@[CrashlyticsKit]];
     
-    // Analytics for Estimote
-    [ESTCloudManager setupAppID:@"places-sst" andAppToken:@"9196e81b5b5b44834fb2b1cae67f3bc8"];
-    [ESTCloudManager enableMonitoringAnalytics:YES];
+    // Initialize custom storyboard for iPhone 4S (which requires a modified storyboard)
+    if ([[UIScreen mainScreen] bounds].size.height == 480)
+    {
+        UIStoryboard *iPhone35Storyboard = [UIStoryboard storyboardWithName:@"Main~3.5" bundle:nil];
+        UIViewController *initialViewController = [iPhone35Storyboard instantiateInitialViewController];
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        self.window.rootViewController  = initialViewController;
+        [self.window makeKeyAndVisible];
+    }
     
     // Set status bar color to white
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
