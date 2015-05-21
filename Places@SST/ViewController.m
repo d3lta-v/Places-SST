@@ -48,8 +48,6 @@
     // Check if bluetooth is on or off
     [self startBluetoothStatusMonitoring];
     
-    //_inferredLocation.text = @"Beta Labs";
-    
     // Initialize the location manager
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -215,21 +213,12 @@
             _inferredInfo.text = @"This is the SST Wall, Visitors to SST, from both Singapore and overseas take their group shots here.\n\nTap on the iBeacon to visit the SST website and learn more about SST.";
             linkURL = @"http://www.sst.edu.sg";
         }
-        /*else if ([minor isEqual:@"2"]) {
-            locationString = [locationString stringByAppendingString:@"Integrated "];
-            [UIView transitionWithView:_bgImg duration:0.4f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{_bgImg.image = [UIImage imageNamed:@"AtriumDefault"];} completion:nil];
-            linkURL = @"";
-        }*/
         else
             //locationString=@"Weak Signal";
             goto unimplemented;
     }
     // Block B
     else if ([major isEqual:@"2"]) {
-        /*if ([minor isEqual:@"1"]) {
-            locationString = [locationString stringByAppendingString:@"Visitor Centre"];
-            linkURL = @"";
-        }*/
         if ([minor isEqual:@"2"]){
             locationString = [locationString stringByAppendingString:@"Exhibition Centre"];
             if (![self.lastUsedImage isEqualToString:@"ExhibitionStudioDefault"]) {
