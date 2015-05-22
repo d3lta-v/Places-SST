@@ -26,6 +26,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *signalIndicator;
 @property NSString *lastUsedImage;
 
+// UI Elements for DEBUGGING ONLY
+@property (weak, nonatomic) IBOutlet UILabel *rawRSSI;
+@property (weak, nonatomic) IBOutlet UILabel *beaconDisconnectThreshold;
+@property (weak, nonatomic) IBOutlet UILabel *rawConnectivity;
+
 -(UIImage *)applySignal:(short)imageId;
 
 @end

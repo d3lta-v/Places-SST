@@ -27,6 +27,20 @@
                                     <constraint firstAttribute="width" secondItem="1Yh-cZ-Eqf" secondAttribute="height" multiplier="1:1" id="PZd-9C-wZG"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DISCONNECTED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgt-sO-8hm">
+                                <rect key="frame" x="72" y="89" width="176" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0/9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xk-pb-GJC">
+                                <rect key="frame" x="72" y="329" width="176" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Polling..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="175" translatesAutoresizingMaskIntoConstraints="NO" id="MMW-dg-2af" userLabel="inferredLocation">
                                 <rect key="frame" x="73" y="177" width="175" height="83"/>
                                 <constraints>
@@ -45,6 +59,13 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RSSI: -0dBm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcL-c9-1Gg">
+                                <rect key="frame" x="72" y="281" width="176" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -72,9 +93,12 @@
                     <navigationItem key="navigationItem" title="Here" id="DuI-25-HKe"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="beaconDisconnectThreshold" destination="6xk-pb-GJC" id="NgY-Rj-XuL"/>
                         <outlet property="bgImg" destination="ICd-EC-BPt" id="Kcd-Dd-oQq"/>
                         <outlet property="inferredInfo" destination="pnN-FA-4I4" id="2HM-Ww-dDx"/>
                         <outlet property="inferredLocation" destination="MMW-dg-2af" id="3c3-gs-xYN"/>
+                        <outlet property="rawConnectivity" destination="Rgt-sO-8hm" id="BRW-Dm-76S"/>
+                        <outlet property="rawRSSI" destination="JcL-c9-1Gg" id="EIU-WT-cLC"/>
                         <outlet property="signalIndicator" destination="1Yh-cZ-Eqf" id="rYc-Rt-sMA"/>
                         <segue destination="5zI-r4-3K4" kind="presentation" identifier="ShowDetail" id="W93-IE-pq7"/>
                     </connections>

@@ -18,6 +18,7 @@
     bool inRegion;
     
     BOOL iPadIsUsed;
+    BOOL debugMode;
 }
 
 @end
@@ -29,6 +30,11 @@
     if (self) {
         // Initialization code
         iPadIsUsed = UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad; // Initialization of a run-time constant
+        linkURL = @"";
+        self.beaconDisconnectInteger = 0;
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"debug_mode"]==YES) {
+            debugMode = YES;
+        }
     }
     return self;
 }
@@ -41,17 +47,12 @@
     inRegion = false;
     _signalIndicator.image = [self applySignal:0];
     
-    linkURL = @"";
-    
-    self.beaconDisconnectInteger = 0;
-    
     // Check if bluetooth is on or off
     [self startBluetoothStatusMonitoring];
     
     // Initialize the location manager
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    
     self.locationManager.pausesLocationUpdatesAutomatically = NO;
     NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:@"775752A9-F236-4619-9562-84AC9DE124C6"];
     self.myBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityUUID identifier:@"Estimote Region"];
@@ -64,11 +65,14 @@
     
     // Start monitoring
     [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
-    //[self.locationManager startUpdatingLocation];
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    // Check for debug mode
+    if (debugMode) {
+        // Show debug labels
+        _rawConnectivity.alpha = 1;
+        _rawRSSI.alpha = 1;
+        _beaconDisconnectThreshold.alpha = 1;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,7 +102,7 @@
             return;
         }
         
-        switch(foundBeacon.proximity) {
+        /*switch(foundBeacon.proximity) {
             case CLProximityFar:
                 _signalIndicator.image = [self applySignal:2];
                 break;
@@ -114,26 +118,57 @@
                 break;
             case CLProximityUnknown:
                 return;
+        }*/
+        
+        //TODO: Finish RSSI-based proximity implementation.
+        if (foundBeacon.proximity == CLProximityImmediate) { // Case for "Immediate" proximity
+            _signalIndicator.image = [self applySignal:3];
+            if (![linkURL isEqualToString:@""]) {
+                // Initiate segue only when linkURL is not empty
+                [self performSegueWithIdentifier:@"ShowDetail" sender:self];
+            }
+        } else {
+            if (foundBeacon.rssi>=-80) { // Near
+                _signalIndicator.image = [self applySignal:3];
+            } else if (foundBeacon.rssi >= -90) { // Medium
+                _signalIndicator.image = [self applySignal:2];
+            } else if (foundBeacon.rssi >= -110) { // Far
+                _signalIndicator.image = [self applySignal:1];
+            }
         }
         
         // Call the function to automatically set the text
         [self setTextInfoWithMajor:major minor:minor];
+        
+        if (debugMode) {
+            NSLog(@"Beacon detected with %@, %@", major, minor);
+            NSLog(@"RSSI: %ld", (long)foundBeacon.rssi);
+            _rawConnectivity.text = @"CONNECTED";
+            _beaconDisconnectThreshold.text = [NSString stringWithFormat:@"%hd/9", self.beaconDisconnectInteger];
+            _rawRSSI.text = [NSString stringWithFormat:@"RSSI: %lddBm", (long)foundBeacon.rssi];
+        }
     } else {
         // Beacon count is zero
-        NSLog(@"No beacons were detected");
         
-        // Implement smoothing algorithm, by incrementing an NSUInteger (current disconnect message trigger requires 7 polls AKA 7 seconds)
-        if (self.beaconDisconnectInteger >= 7) { //Greater than or equal to, to prevent accidental overshoot of integer
+        // Implement smoothing algorithm, by incrementing an NSUInteger (current disconnect message trigger requires 9 polls AKA 9 seconds)
+        if (self.beaconDisconnectInteger > 8) { //Greater than operator to prevent accidental overshoot of integer
             // No beacons are in range
-            _signalIndicator.image = [PlacesKit imageOfNone];
+            _signalIndicator.image = [self applySignal:0];
             _inferredLocation.text = @"No Signal";
-            _inferredInfo.text = @"The app detected no or weak Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST to double check your connection.";
+            _inferredInfo.text = @"The app detected no or weak Bluetooth signals from the iBeacons. You might not be in the beacon coverage zone. Please walk around SST  to double check your connection.";
             if (![self.lastUsedImage isEqualToString:@"SSTGeneric"]) {
                 [self setBackgroundImage:@"SSTGeneric"];
                 self.lastUsedImage = @"SSTGeneric";
             }
         } else {
             self.beaconDisconnectInteger++;
+        }
+        
+        if (debugMode) {
+            NSLog(@"No beacons were detected");
+            _beaconDisconnectThreshold.text = [NSString stringWithFormat:@"%hd/9", self.beaconDisconnectInteger];
+            _rawConnectivity.text = @"DISCONNECTED";
+            _rawRSSI.text = @"RSSI: -dBm";
         }
     }
 }
@@ -250,7 +285,7 @@
                 self.lastUsedImage = @"MakerspaceDefault";
             }
             _inferredInfo.text = @"The SST Makerspace is a fully-equipped learning zone where students can design, prototype and manufacture products. Makerspaces are a fairly new phenomenon, but are beginning to make waves in the field of education. The SST Makerspace represents the democratisation of design, engineering, fabrication and education, and empowers our students with the resources to unleash their creativity.\n\nThe Makerspace includes the SST Inc room, a room dedicated to makers and tinkerers who want to develop softwares that empower SST and the world, including this app that you are using right now, Places@SST. The background of this screen is the Ideation Tunnel, a place where members of SST Inc discuss their ideas and sketch them out on the glass whiteboards.\n\nTap on the beacon to access the SST Inc website.";
-            linkURL = @"";
+            linkURL = @"http://sstinc.org";
         }
         else if ([minor isEqual:@"3"]) {
             locationString = [locationString stringByAppendingString:@"Beta Labs"];
@@ -295,7 +330,6 @@
         }
         _inferredInfo.text = @"This location seems to be a new beacon in deployment or configuration, but we haven't finished it yet! Look out for new locations in the next release of Places@SST!";
         linkURL = @"";
-        NSLog(@"Not implemented beacon with major,minor: %@, %@", major, minor);
     }
     
     // Finally set the text
@@ -307,11 +341,17 @@
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
     if ([central state] == CBCentralManagerStatePoweredOn) {
         //bluetoothEnabled = YES
-        [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
+        //[self.tabBarController dismissViewControllerAnimated:YES completion:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
+        });
     }
     else {
         //bluetoothEnabled = NO;
-        [self.tabBarController performSegueWithIdentifier:@"NoBluetoothSegue" sender:self.tabBarController];
+        //[self.tabBarController performSegueWithIdentifier:@"NoBluetoothSegue" sender:self.tabBarController];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.tabBarController performSegueWithIdentifier:@"NoBluetoothSegue" sender:self.tabBarController];
+        });
     }
 }
 

@@ -45,6 +45,7 @@
 		22C915BF1A9C01E100E8AA2A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C915BD1A9C01E100E8AA2A /* Crashlytics.framework */; };
 		22C915C01A9C01E100E8AA2A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C915BE1A9C01E100E8AA2A /* Fabric.framework */; };
 		22E814001A59409700B09802 /* InAppBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E813FF1A59409700B09802 /* InAppBrowserViewController.m */; };
+		22FED6251B0F0B38000F2767 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22FED6241B0F0B37000F2767 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		22C915BE1A9C01E100E8AA2A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		22E813FE1A59409700B09802 /* InAppBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppBrowserViewController.h; sourceTree = "<group>"; };
 		22E813FF1A59409700B09802 /* InAppBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppBrowserViewController.m; sourceTree = "<group>"; };
+		22FED6241B0F0B37000F2767 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +350,7 @@
 				221CD2761A37263100CECF74 /* PlacesKit.m */,
 				22C453E619CD3FD8007D6292 /* Info.plist */,
 				22C453E719CD3FD8007D6292 /* main.m */,
+				22FED6241B0F0B37000F2767 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				22535D741B0B6523008C983D /* Main~iPad.storyboard in Resources */,
 				229D934C1A58300D00B92A4B /* Safari~ipad.png in Resources */,
 				229D93481A58300D00B92A4B /* TUSafariActivity.strings in Resources */,
+				22FED6251B0F0B38000F2767 /* Settings.bundle in Resources */,
 				2247AE2F1A9A209E008152AA /* LaunchScreen.xib in Resources */,
 				22C453F119CD3FD8007D6292 /* Main.storyboard in Resources */,
 				229D93491A58300D00B92A4B /* Safari.png in Resources */,
