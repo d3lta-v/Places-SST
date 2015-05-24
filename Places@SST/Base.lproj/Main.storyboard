@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="height" constant="83" id="7WW-Be-V0u"/>
                                     <constraint firstAttribute="width" constant="175" id="vR2-36-15i"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="39"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -101,6 +101,7 @@
                         <outlet property="rawRSSI" destination="JcL-c9-1Gg" id="EIU-WT-cLC"/>
                         <outlet property="signalIndicator" destination="1Yh-cZ-Eqf" id="rYc-Rt-sMA"/>
                         <segue destination="5zI-r4-3K4" kind="presentation" identifier="ShowDetail" id="W93-IE-pq7"/>
+                        <segue destination="V6t-mF-hUj" kind="presentation" identifier="NoBluetoothSegue" id="i5a-yt-3we"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -237,7 +238,6 @@
                         <segue destination="EbJ-gA-sVZ" kind="relationship" relationship="viewControllers" id="0JB-50-52D"/>
                         <segue destination="kOf-7H-lXi" kind="relationship" relationship="viewControllers" id="iaK-1Y-ttP"/>
                         <segue destination="IUR-1Y-b4e" kind="relationship" relationship="viewControllers" id="bPY-Fl-KjH"/>
-                        <segue destination="V6t-mF-hUj" kind="presentation" identifier="NoBluetoothSegue" id="ycN-Jr-CTh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWm-rT-maa" userLabel="First Responder" sceneMemberID="firstResponder"/>

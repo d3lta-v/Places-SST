@@ -47,7 +47,12 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setToolbarHidden:NO];
-    [self setToolbarItems:[NSArray arrayWithObjects:_flexSpace1,_backButton,_fixedSpace2,_forwardButton,_fixedSpace3,_refreshButton,_fixedSpace4,_exportButton,_flexSpace5, nil] animated:NO];
+    
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
+        [self setToolbarItems:@[_fixedSpace1iPad, _backButton, _fixedSpace2iPad, _forwardButton, _flexSpace3iPad, _refreshButton, _fixedSpace4iPad, _exportButton, _fixedSpace5iPad]];
+    } else {
+        [self setToolbarItems:[NSArray arrayWithObjects:_flexSpace1,_backButton,_fixedSpace2,_forwardButton,_fixedSpace3,_refreshButton,_fixedSpace4,_exportButton,_flexSpace5, nil] animated:NO];
+    }
     [self.navigationController.navigationBar addSubview:_progressView];
 }
 
@@ -73,9 +78,21 @@
 }
 
 - (IBAction)exportAction:(id)sender {
-    TUSafariActivity *activity = [[TUSafariActivity alloc] init];
-    UIActivityViewController *actViewCtrl=[[UIActivityViewController alloc]initWithActivityItems:@[_mainWebView.request.mainDocumentURL] applicationActivities:@[activity]];
-    [self presentViewController:actViewCtrl animated:YES completion:nil];
+    if (_mainWebView.request.mainDocumentURL!=nil) {
+        TUSafariActivity *activity = [[TUSafariActivity alloc] init];
+        UIActivityViewController *actViewCtrl=[[UIActivityViewController alloc]initWithActivityItems:@[_mainWebView.request.mainDocumentURL] applicationActivities:@[activity]];
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            [self presentViewController:actViewCtrl animated:YES completion:nil];
+        }
+        else {
+            // Change Rect to position Popover
+            UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:actViewCtrl];
+            [popup presentPopoverFromRect:[[self.exportButton valueForKey:@"frame"] frame] inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+        }
+    } else {
+        return;
+    }
 }
 
 - (IBAction)refreshOrStop:(id)sender {

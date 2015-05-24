@@ -19,11 +19,19 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *exportButton;
 
+// iPhone Bar Button Items
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *flexSpace1;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *fixedSpace2;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *fixedSpace3;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *fixedSpace4;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *flexSpace5;
+
+// iPad Bar Button Items
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *fixedSpace1iPad;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *fixedSpace2iPad;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *flexSpace3iPad;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *fixedSpace4iPad;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *fixedSpace5iPad;
 
 @property (copy, nonatomic) NSURL *urlString;
 

@@ -17,13 +17,14 @@
     NSString *linkURL;
     bool inRegion;
     
-    BOOL iPadIsUsed;
     BOOL debugMode;
 }
 
 @end
 
 @implementation ViewController
+
+@synthesize iPadIsUsed;
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -102,26 +103,15 @@
             return;
         }
         
-        /*switch(foundBeacon.proximity) {
-            case CLProximityFar:
-                _signalIndicator.image = [self applySignal:2];
-                break;
-            case CLProximityNear:
-                _signalIndicator.image = [self applySignal:3];
-                break;
-            case CLProximityImmediate:
-                _signalIndicator.image = [self applySignal:3];
-                if (![linkURL isEqualToString:@""]) {
-                    // Initiate segue only when linkURL is not empty
-                    [self performSegueWithIdentifier:@"ShowDetail" sender:self];
-                }
-                break;
-            case CLProximityUnknown:
-                return;
-        }*/
+        // Use different signal "Immediate" thresholds for iPad and iPhone, since iPads have better signal sensitivity
+        short immediateThreshold;
+        if (iPadIsUsed) {
+            immediateThreshold = -65;
+        } else {
+            immediateThreshold = -69;
+        }
         
-        //TODO: Finish RSSI-based proximity implementation.
-        if (foundBeacon.proximity == CLProximityImmediate) { // Case for "Immediate" proximity
+        if (foundBeacon.rssi>=immediateThreshold) {
             _signalIndicator.image = [self applySignal:3];
             if (![linkURL isEqualToString:@""]) {
                 // Initiate segue only when linkURL is not empty
@@ -133,6 +123,8 @@
             } else if (foundBeacon.rssi >= -90) { // Medium
                 _signalIndicator.image = [self applySignal:2];
             } else if (foundBeacon.rssi >= -110) { // Far
+                _signalIndicator.image = [self applySignal:1];
+            } else { // Final catching mechanism, just to be safe
                 _signalIndicator.image = [self applySignal:1];
             }
         }
@@ -329,7 +321,7 @@
             self.lastUsedImage = @"SSTGeneric";
         }
         _inferredInfo.text = @"This location seems to be a new beacon in deployment or configuration, but we haven't finished it yet! Look out for new locations in the next release of Places@SST!";
-        linkURL = @"";
+        linkURL = @"http://sstinc.org";
     }
     
     // Finally set the text
@@ -343,14 +335,14 @@
         //bluetoothEnabled = YES
         //[self.tabBarController dismissViewControllerAnimated:YES completion:nil];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:nil];
         });
     }
     else {
         //bluetoothEnabled = NO;
         //[self.tabBarController performSegueWithIdentifier:@"NoBluetoothSegue" sender:self.tabBarController];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.tabBarController performSegueWithIdentifier:@"NoBluetoothSegue" sender:self.tabBarController];
+            [self performSegueWithIdentifier:@"NoBluetoothSegue" sender:self];
         });
     }
 }

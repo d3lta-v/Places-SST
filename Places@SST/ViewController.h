@@ -11,6 +11,9 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate, CBCentralManagerDelegate>
+{
+    //BOOL iPadIsUsed;
+}
 
 // Managers
 @property (strong, nonatomic) CLBeaconRegion *myBeaconRegion;
@@ -30,6 +33,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *rawRSSI;
 @property (weak, nonatomic) IBOutlet UILabel *beaconDisconnectThreshold;
 @property (weak, nonatomic) IBOutlet UILabel *rawConnectivity;
+
+// External available variable
+@property BOOL iPadIsUsed;
 
 -(UIImage *)applySignal:(short)imageId;
 

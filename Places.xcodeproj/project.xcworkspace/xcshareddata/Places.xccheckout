@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CB51FA7D-3020-4D9C-A878-6CBE91FB1B47</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E9966A1EFB69C5783A3916558FE05DFD67955986</key>
+		<string>https://github.com/sammy0025/Places-SST.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Places.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E9966A1EFB69C5783A3916558FE05DFD67955986</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sammy0025/Places-SST.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E9966A1EFB69C5783A3916558FE05DFD67955986</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E9966A1EFB69C5783A3916558FE05DFD67955986</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Places@SST</string>
+		</dict>
+	</array>
+</dict>
+</plist>

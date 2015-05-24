@@ -21,18 +21,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xeo-uM-yGm" userLabel="signalIndicator">
-                                <rect key="frame" x="40" y="78" width="240" height="240"/>
+                                <rect key="frame" x="50" y="72" width="220" height="220"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyq-n8-IpT">
-                                <rect key="frame" x="23" y="321" width="275" height="104"/>
+                                <rect key="frame" x="23" y="300" width="275" height="125"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <string key="text">In SST, learning is supported and enhanced by state-of-the-art specialised studios and laboratories as well as flexible learning spaces and recreational facilities. They support curricular programming and services by providing an environment that is conducive for bright young minds to work in. This app will guide you through the various locations in SST and allow you to learn more about them.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Polling..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="140" translatesAutoresizingMaskIntoConstraints="NO" id="pua-Ca-ZZI" userLabel="inferredLocation">
-                                <rect key="frame" x="90" y="160" width="140" height="75"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Polling..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="120" translatesAutoresizingMaskIntoConstraints="NO" id="pua-Ca-ZZI" userLabel="inferredLocation">
+                                <rect key="frame" x="100" y="144" width="120" height="75"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -48,6 +48,7 @@
                         <outlet property="inferredLocation" destination="pua-Ca-ZZI" id="PJl-WL-v8t"/>
                         <outlet property="signalIndicator" destination="xeo-uM-yGm" id="fbS-eG-c38"/>
                         <segue destination="Nou-Nf-adg" kind="presentation" identifier="ShowDetail" id="YrD-E3-xec"/>
+                        <segue destination="HZy-MT-gPd" kind="presentation" identifier="NoBluetoothSegue" id="U4m-0f-PDP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0d-EQ-ab5" sceneMemberID="firstResponder"/>
@@ -136,7 +137,6 @@
                         <segue destination="Rns-nD-I3b" kind="relationship" relationship="viewControllers" id="9U4-lh-MSa"/>
                         <segue destination="zOm-75-qHR" kind="relationship" relationship="viewControllers" id="ftT-u3-J4r"/>
                         <segue destination="dqs-RO-Oge" kind="relationship" relationship="viewControllers" id="Sel-YT-blH"/>
-                        <segue destination="HZy-MT-gPd" kind="presentation" identifier="NoBluetoothSegue" id="ZD5-Dq-Gyr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jed-Z2-KiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
