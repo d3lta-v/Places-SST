@@ -51,6 +51,7 @@
     // Check if bluetooth is on or off
     [self startBluetoothStatusMonitoring];
     
+    
     // Initialize the location manager
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
