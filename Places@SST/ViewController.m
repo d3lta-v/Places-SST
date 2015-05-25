@@ -237,8 +237,8 @@
                 [self setBackgroundImage:@"SSTWallDefault"];
                 self.lastUsedImage = @"SSTWallDefault";
             }
-            locationString = [locationString stringByAppendingString:@"SST Wall"];
-            _inferredInfo.text = @"This is the SST Wall, Visitors to SST, from both Singapore and overseas take their group shots here.\n\nTap on the iBeacon to visit the SST website and learn more about SST.";
+            locationString = [locationString stringByAppendingString:@"Welcome to SST"];
+            _inferredInfo.text = @"Welcome to the School of Science and Technology, Singapore (SST)! We aim to be a global leader in transforming learning and nurture passionate innovators who improve society through real-world applications of science and technology.\n\nVisitors to SST, from both Singapore and overseas take their group shots in front of the SST logo. \nTap on the iBeacon to visit the SST website and learn more about SST.";
             linkURL = @"http://www.sst.edu.sg";
         }
         else
@@ -253,8 +253,8 @@
                 [self setBackgroundImage:@"ExhibitionStudioDefault"];
                 self.lastUsedImage = @"ExhibitionStudioDefault";
             }
-            _inferredInfo.text = @"The Exhibition Center is a place for students and the school to showcase their works and achievements, ranging from art pieces to outstanding ISS (Interdisciplinary Science Studies) projects. This place houses the school's various achievements.\n\nYou can view the SST Corporate Video by tapping your phone on the iBeacon.";
-            linkURL = @"http://www.sst.edu.sg/media-centre/sst-corporate-video";
+            _inferredInfo.text = @"The Exhibition Centre is a place for students and the school to showcase their works and achievements, ranging from art pieces to Interdisciplinary Science Studies (ISS) projects. This place also features some of the school's achievements.\n\nYou can view the SST Exhibition Site by tapping your phone on the iBeacon.";
+            linkURL = @"http://www.sst.edu.sg/exhibition/";
         }
         else {
             goto unimplemented;
@@ -269,7 +269,7 @@
             }
             locationString = [locationString stringByAppendingString:@"Science Hub"];
             _inferredInfo.text = @"Opportunities for independent and joint research experimentation abound in our state-of-the-art Science Hub, which comprises twelve laboratories (four dedicated to the Applied Sciences), as well as a tissue culture room, a research lab and an engineering lab.\n\nThe unique multifunctional NAWIS® system in the Physics laboratories allows for more flexibility and mobility in these spaces. Special research equipment are also available in the laboratories to support students’ explorations in the fields of Analytical Chemistry, Biomedical Sciences and Sensor Technology.";
-            linkURL = @"";
+            linkURL = @"http://www.sst.edu.sg/exhibition/subject/sciences/";
         }
         else if ([minor isEqual:@"2"]) {
             locationString = [locationString stringByAppendingString:@"SST Inc"];
@@ -277,7 +277,7 @@
                 [self setBackgroundImage:@"MakerspaceDefault"];
                 self.lastUsedImage = @"MakerspaceDefault";
             }
-            _inferredInfo.text = @"The SST Makerspace is a fully-equipped learning zone where students can design, prototype and manufacture products. Makerspaces are a fairly new phenomenon, but are beginning to make waves in the field of education. The SST Makerspace represents the democratisation of design, engineering, fabrication and education, and empowers our students with the resources to unleash their creativity.\n\nThe Makerspace includes the SST Inc room, a room dedicated to makers and tinkerers who want to develop softwares that empower SST and the world, including this app that you are using right now, Places@SST. The background of this screen is the Ideation Tunnel, a place where members of SST Inc discuss their ideas and sketch them out on the glass whiteboards.\n\nTap on the beacon to access the SST Inc website.";
+            _inferredInfo.text = @"A unique space for aspiring entrepreneurs, SST INC. is a state-of-the-art business incubator which hosts start-up companies run by our InfoComm Technology Talent Development Programme (ICT TDP) students. Computer workshops, exhibitions and project discussions are held here on a regular basis, and the venue has been the nerve centre for project discussions which have yielded notable results – such as the SST Open House, SST Lens, SST Announcer, as well as the app you are using right now, Places@SST. The students also created a Maths Notes App for use when revising their examinations.\nTap on the iBeacon to visit the SST INC website to know more about SST INC.";
             linkURL = @"http://sstinc.org";
         }
         else if ([minor isEqual:@"3"]) {
@@ -295,8 +295,8 @@
                 [self setBackgroundImage:@"RoboticsDefault"];
                 self.lastUsedImage = @"RoboticsDefault";
              }*/
-            _inferredInfo.text = @"";
-            linkURL = @"";
+            _inferredInfo.text = @"Co-Curricular Activities (CCA) is an integral part of the school curriculum, complementing the formal education and contributing to the holistic development of the students. It plays a significant role in the students’ values education and character development by instilling both moral and performance character in them. In addition, it is a platform for fostering camaraderie, cultivating healthy living habits and promoting aesthetic/cultural appreciation.\n\nSST students will strive to attain a good balance between maximising their potential in their area of interest through their CCA as well as their academic pursuits.\n\nTap on the beacons to learn more about CCAs in SST.";
+            linkURL = @"http://www.sst.edu.sg/co-curricular-activities/clubs-and-societies/robotics-club/";
         }
         else {
             //locationString=@"Polling...";
@@ -311,7 +311,7 @@
             self.lastUsedImage = @"SportsComplexDefault";
         }
         _inferredInfo.text = @"The Ngee Ann Kongsi Sports Complex consists of a multi-purpose hall, an indoor sports hall, gym, dance studio, music room and a rooftop basketball court cum running track. Outdoor sports facilities include a synthetic football field and a NAPFA fitness area, in addition to three CCA rooms and a student leader lounge.";
-        linkURL = @"http://www.sst.edu.sg/curriculum/sports-and-wellness/";
+        linkURL = @"http://www.sst.edu.sg/exhibition/subject/sports-and-wellness/";
     }
     else
     {
