@@ -51,7 +51,6 @@
     // Check if bluetooth is on or off
     [self startBluetoothStatusMonitoring];
     
-    
     // Initialize the location manager
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -290,7 +289,7 @@
             linkURL = @"";
         }
         else if ([minor isEqual:@"4"]) {
-            locationString = [locationString stringByAppendingString:@"Robotics Room"];
+            locationString = [locationString stringByAppendingString:@"Robotics @ APEX"];
             /*if (![self.lastUsedImage isEqualToString:@"RoboticsDefault"]) {
                 [self setBackgroundImage:@"RoboticsDefault"];
                 self.lastUsedImage = @"RoboticsDefault";
@@ -310,7 +309,7 @@
             [self setBackgroundImage:@"SportsComplexDefault"];
             self.lastUsedImage = @"SportsComplexDefault";
         }
-        _inferredInfo.text = @"The Ngee Ann Kongsi Sports Complex consists of a multi-purpose hall, an indoor sports hall, gym, dance studio, music room and a rooftop basketball court cum running track. Outdoor sports facilities include a synthetic football field and a NAPFA fitness area, in addition to three CCA rooms and a student leader lounge.";
+        _inferredInfo.text = @"The Ngee Ann Kongsi Sports Complex consists of a multi-purpose hall, an indoor sports hall, gym, dance studio, music room and a rooftop basketball court cum running track. Outdoor sports facilities include a synthetic football field and a NAPFA fitness area, in addition to three CCA rooms and a student leader lounge.\nTap on the iBeacon to learn more about SST's Sports and Wellness program.";
         linkURL = @"http://www.sst.edu.sg/exhibition/subject/sports-and-wellness/";
     }
     else

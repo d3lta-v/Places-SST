@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		221CD2771A37263100CECF74 /* PlacesKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CD2761A37263100CECF74 /* PlacesKit.m */; };
 		2247AE2F1A9A209E008152AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2247AE2E1A9A209E008152AA /* LaunchScreen.xib */; };
+		224BC3661B1352A300B28DE4 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BC3651B1352A300B28DE4 /* AboutViewController.m */; };
 		22535D741B0B6523008C983D /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22535D731B0B6522008C983D /* Main~iPad.storyboard */; };
 		22535D761B0CA76C008C983D /* Main~3.5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22535D751B0CA76C008C983D /* Main~3.5.storyboard */; };
 		2256566B19DADE5A007D0702 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2256566A19DADE5A007D0702 /* Accelerate.framework */; };
@@ -111,6 +112,8 @@
 		221CD2751A37263100CECF74 /* PlacesKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesKit.h; sourceTree = "<group>"; };
 		221CD2761A37263100CECF74 /* PlacesKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesKit.m; sourceTree = "<group>"; };
 		2247AE2E1A9A209E008152AA /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../LaunchScreen.xib; sourceTree = "<group>"; };
+		224BC3641B1352A300B28DE4 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		224BC3651B1352A300B28DE4 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		22535D731B0B6522008C983D /* Main~iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~iPad.storyboard"; sourceTree = "<group>"; };
 		22535D751B0CA76C008C983D /* Main~3.5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~3.5.storyboard"; sourceTree = "<group>"; };
 		2256566A19DADE5A007D0702 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -330,6 +333,8 @@
 				229D8F141A57A7E500B92A4B /* WebViewController.m */,
 				22E813FE1A59409700B09802 /* InAppBrowserViewController.h */,
 				22E813FF1A59409700B09802 /* InAppBrowserViewController.m */,
+				224BC3641B1352A300B28DE4 /* AboutViewController.h */,
+				224BC3651B1352A300B28DE4 /* AboutViewController.m */,
 				22C4540B19CD5538007D6292 /* NoBluetoothViewController.h */,
 				22C4540C19CD5538007D6292 /* NoBluetoothViewController.m */,
 				22535D751B0CA76C008C983D /* Main~3.5.storyboard */,
@@ -602,6 +607,7 @@
 				22C453EE19CD3FD8007D6292 /* ViewController.m in Sources */,
 				229D8F151A57A7E500B92A4B /* WebViewController.m in Sources */,
 				22C453EB19CD3FD8007D6292 /* AppDelegate.m in Sources */,
+				224BC3661B1352A300B28DE4 /* AboutViewController.m in Sources */,
 				229D8F001A579B6D00B92A4B /* SVIndefiniteAnimatedView.m in Sources */,
 				229D8F021A579B6D00B92A4B /* SVProgressHUD.m in Sources */,
 				229D8F121A579DC600B92A4B /* SIMUXCRParser.m in Sources */,
