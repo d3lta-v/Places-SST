@@ -109,7 +109,7 @@
         if (iPadIsUsed) {
             immediateThreshold = -65;
         } else {
-            immediateThreshold = -69;
+            immediateThreshold = -68;
         }
         
         if (foundBeacon.rssi>=immediateThreshold) {

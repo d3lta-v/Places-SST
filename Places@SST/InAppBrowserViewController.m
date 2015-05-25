@@ -80,7 +80,7 @@
 - (IBAction)exportAction:(id)sender {
     if (_mainWebView.request.mainDocumentURL!=nil) {
         TUSafariActivity *activity = [[TUSafariActivity alloc] init];
-        UIActivityViewController *actViewCtrl=[[UIActivityViewController alloc]initWithActivityItems:@[_mainWebView.request.mainDocumentURL] applicationActivities:@[activity]];
+        UIActivityViewController *actViewCtrl=[[UIActivityViewController alloc]initWithActivityItems:@[self.urlString] applicationActivities:@[activity]];
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
             [self presentViewController:actViewCtrl animated:YES completion:nil];
