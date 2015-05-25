@@ -44,7 +44,7 @@
 }
 
 - (IBAction)christopherButton:(id)sender {
-    urlToPass = @"https://statixind.net/about.html";
+    urlToPass = @"https://twitter.com/forcedlightning";
     [self performSegueWithIdentifier:@"gotoWebview" sender:self];
 }
 
