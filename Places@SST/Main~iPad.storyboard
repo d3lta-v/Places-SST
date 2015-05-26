@@ -267,74 +267,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="DdR-og-q5f" kind="relationship" relationship="rootViewController" id="0H9-zq-qZM"/>
+                        <segue destination="TtJ-ON-ZKW" kind="relationship" relationship="rootViewController" id="64A-Ew-NDi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cl8-lc-8ym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6" y="-884"/>
-        </scene>
-        <!--Events-->
-        <scene sceneID="4xk-0k-7XD">
-            <objects>
-                <tableViewController id="DdR-og-q5f" customClass="EventsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="vuy-dx-mgk">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Events" id="H4O-5N-vuE">
-                            <rect key="frame" x="0.0" y="64" width="768" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="DdR-og-q5f" id="l62-oz-GBm"/>
-                            </connections>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="LuN-tM-VAk" detailTextLabel="r7T-by-7Ka" rowHeight="55" style="IBUITableViewCellStyleSubtitle" id="Zh9-Yy-5P4">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zh9-Yy-5P4" id="Xxj-uc-PEp">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LuN-tM-VAk">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r7T-by-7Ka">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="DdR-og-q5f" id="BYy-H5-7F2"/>
-                            <outlet property="delegate" destination="DdR-og-q5f" id="swk-o0-O59"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Events" id="wgL-ps-7Y1"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="4FH-za-hR2" id="4gi-pr-VPo"/>
-                        <segue destination="EHR-8v-LVJ" kind="show" identifier="MasterToDetail" id="Jea-0t-vYB"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TbI-y9-QFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="4FH-za-hR2">
-                    <connections>
-                        <outlet property="delegate" destination="DdR-og-q5f" id="ruc-D3-hDI"/>
-                        <outlet property="searchBar" destination="H4O-5N-vuE" id="cxf-CP-aIi"/>
-                        <outlet property="searchContentsController" destination="DdR-og-q5f" id="3pH-p1-CSu"/>
-                        <outlet property="searchResultsDataSource" destination="DdR-og-q5f" id="Cfw-Qu-OvT"/>
-                        <outlet property="searchResultsDelegate" destination="DdR-og-q5f" id="S9B-Pz-Fue"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="874" y="-872"/>
         </scene>
         <!--Here-->
         <scene sceneID="Q6K-UF-R7t">
@@ -375,58 +313,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jb6-7d-gwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="74" y="1478"/>
-        </scene>
-        <!--Web View Controller-->
-        <scene sceneID="sRi-vO-D7j">
-            <objects>
-                <viewController id="EHR-8v-LVJ" customClass="WebViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hdr-4R-GAb"/>
-                        <viewControllerLayoutGuide type="bottom" id="QeX-av-6Bi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2at-JZ-EDO">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Wm-mK-moC">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="EHR-8v-LVJ" id="K4C-JW-yBC"/>
-                                </connections>
-                            </webView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Myn-Fc-uxv" customClass="DTAttributedTextView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Myn-Fc-uxv" firstAttribute="top" secondItem="2at-JZ-EDO" secondAttribute="top" id="5So-9G-cvo"/>
-                            <constraint firstItem="2Wm-mK-moC" firstAttribute="leading" secondItem="2at-JZ-EDO" secondAttribute="leading" id="Cmj-ad-xDP"/>
-                            <constraint firstAttribute="bottom" secondItem="2Wm-mK-moC" secondAttribute="bottom" id="ECl-hA-9gs"/>
-                            <constraint firstAttribute="trailing" secondItem="Myn-Fc-uxv" secondAttribute="trailing" id="Oyx-qo-ztc"/>
-                            <constraint firstAttribute="bottom" secondItem="Myn-Fc-uxv" secondAttribute="bottom" id="Rcr-aN-eXD"/>
-                            <constraint firstAttribute="trailing" secondItem="2Wm-mK-moC" secondAttribute="trailing" id="aXe-fA-s5s"/>
-                            <constraint firstItem="Myn-Fc-uxv" firstAttribute="leading" secondItem="2at-JZ-EDO" secondAttribute="leading" id="bNW-vZ-taj"/>
-                            <constraint firstItem="2Wm-mK-moC" firstAttribute="top" secondItem="2at-JZ-EDO" secondAttribute="top" id="lmk-DS-bfs"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="lHQ-wV-3LY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="2DD-xg-pbI">
-                            <connections>
-                                <action selector="actionSheet:" destination="EHR-8v-LVJ" id="khf-Ra-mMI"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="textView" destination="Myn-Fc-uxv" id="lZ7-8M-bWe"/>
-                        <outlet property="webView" destination="2Wm-mK-moC" id="WYB-KS-5VV"/>
-                        <segue destination="PvB-AH-rYk" kind="presentation" identifier="ToBrowser" id="lUM-gz-vhO"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJN-pK-OdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1750" y="305"/>
         </scene>
         <!--Web Browser-->
         <scene sceneID="W20-zc-bGn">
@@ -530,17 +416,63 @@
             </objects>
             <point key="canvasLocation" x="3541" y="305"/>
         </scene>
+        <!--Events-->
+        <scene sceneID="IfA-f9-4Vg">
+            <objects>
+                <viewController id="TtJ-ON-ZKW" customClass="EventsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fti-5d-ne9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nc4-hd-XRT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x32-ip-CCb">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SSTGeneric" translatesAutoresizingMaskIntoConstraints="NO" id="66N-rh-ibd">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="753-Db-TNV">
+                                <rect key="frame" x="258" y="277" width="253" height="249"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.02" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2J-75-6xt">
+                                <rect key="frame" x="318" y="694" width="133" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Subscribe!" backgroundImage="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="subscribeToCal:" destination="TtJ-ON-ZKW" eventType="touchUpInside" id="3yh-r5-2Dr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If you want to know more about SST's events and when are they happening, subscribe to the SST Events Cal today!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="243" translatesAutoresizingMaskIntoConstraints="NO" id="T3r-X1-hKf">
+                                <rect key="frame" x="184" y="564" width="401" height="96"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Events" id="bGR-Xg-zwJ"/>
+                    <connections>
+                        <outlet property="calendarIcon" destination="753-Db-TNV" id="6BY-Nx-25B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fuW-2b-gtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886" y="-884"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AboutBG" width="375" height="667"/>
         <image name="AboutTab" width="30" height="30"/>
+        <image name="Button" width="341" height="171"/>
         <image name="EventsTab" width="30" height="30"/>
         <image name="NoBluetooth" width="153" height="290"/>
         <image name="SSTGeneric" width="375" height="667"/>
         <image name="Square" width="242" height="242"/>
         <image name="StatiX" width="341" height="341"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="03G-xH-Zip"/>
-    </inferredMetricsTieBreakers>
 </document>

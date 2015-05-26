@@ -49,7 +49,7 @@
     _signalIndicator.image = [self applySignal:0];
     
     // Check if bluetooth is on or off
-    //[self startBluetoothStatusMonitoring];
+    [self startBluetoothStatusMonitoring];
     
     // Initialize the location manager
     self.locationManager = [[CLLocationManager alloc] init];
