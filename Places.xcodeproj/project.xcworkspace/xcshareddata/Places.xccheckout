@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>CB51FA7D-3020-4D9C-A878-6CBE91FB1B47</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Places</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>E9966A1EFB69C5783A3916558FE05DFD67955986</key>
 		<string>https://github.com/sammy0025/Places-SST.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Places.xcodeproj</string>
+	<string>Places.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>E9966A1EFB69C5783A3916558FE05DFD67955986</key>

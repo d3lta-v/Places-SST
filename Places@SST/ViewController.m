@@ -160,7 +160,7 @@
             NSLog(@"No beacons were detected");
             _beaconDisconnectThreshold.text = [NSString stringWithFormat:@"%hd/9", self.beaconDisconnectInteger];
             _rawConnectivity.text = @"DISCONNECTED";
-            _rawRSSI.text = @"RSSI: -dBm";
+            _rawRSSI.text = @"RSSI: -0dBm";
         }
     }
 }
@@ -290,10 +290,10 @@
         }
         else if ([minor isEqual:@"4"]) {
             locationString = [locationString stringByAppendingString:@"Robotics @ APEX"];
-            /*if (![self.lastUsedImage isEqualToString:@"RoboticsDefault"]) {
+            if (![self.lastUsedImage isEqualToString:@"RoboticsDefault"]) {
                 [self setBackgroundImage:@"RoboticsDefault"];
                 self.lastUsedImage = @"RoboticsDefault";
-             }*/
+            }
             _inferredInfo.text = @"Co-Curricular Activities (CCA) is an integral part of the school curriculum, complementing the formal education and contributing to the holistic development of the students. It plays a significant role in the students’ values education and character development by instilling both moral and performance character in them. In addition, it is a platform for fostering camaraderie, cultivating healthy living habits and promoting aesthetic/cultural appreciation.\n\nSST students will strive to attain a good balance between maximising their potential in their area of interest through their CCA as well as their academic pursuits.\n\nTap on the beacons to learn more about CCAs in SST.";
             linkURL = @"http://www.sst.edu.sg/co-curricular-activities/clubs-and-societies/robotics-club/";
         }
