@@ -286,7 +286,7 @@
                 self.lastUsedImage = @"BetaLabsDefault";
             }
             _inferredInfo.text = @"The Beta Lab is a new generation classroom concept of what a future classroom should be like. Currently adopted in tertiary institutes in Singapore, the room facilitates collaboration and small group discussions due to the integration of technology within its layout.";
-            linkURL = @"";
+            linkURL = @"http://www.sst.edu.sg/about-sst/our-facilities/";
         }
         else if ([minor isEqual:@"4"]) {
             locationString = [locationString stringByAppendingString:@"Robotics @ APEX"];
