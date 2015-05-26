@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		221CD2771A37263100CECF74 /* PlacesKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CD2761A37263100CECF74 /* PlacesKit.m */; };
+		224697681B149C1E00E6845A /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224697671B149C1E00E6845A /* EventsViewController.m */; };
 		2247AE2F1A9A209E008152AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2247AE2E1A9A209E008152AA /* LaunchScreen.xib */; };
 		224BC3661B1352A300B28DE4 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BC3651B1352A300B28DE4 /* AboutViewController.m */; };
 		22535D741B0B6523008C983D /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22535D731B0B6522008C983D /* Main~iPad.storyboard */; };
@@ -111,6 +112,8 @@
 /* Begin PBXFileReference section */
 		221CD2751A37263100CECF74 /* PlacesKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesKit.h; sourceTree = "<group>"; };
 		221CD2761A37263100CECF74 /* PlacesKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesKit.m; sourceTree = "<group>"; };
+		224697661B149C1E00E6845A /* EventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsViewController.h; sourceTree = "<group>"; };
+		224697671B149C1E00E6845A /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
 		2247AE2E1A9A209E008152AA /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../LaunchScreen.xib; sourceTree = "<group>"; };
 		224BC3641B1352A300B28DE4 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		224BC3651B1352A300B28DE4 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
@@ -329,6 +332,8 @@
 				22C453ED19CD3FD8007D6292 /* ViewController.m */,
 				227F58E91A4AE17C00FCB2E9 /* EventsTableViewController.h */,
 				227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */,
+				224697661B149C1E00E6845A /* EventsViewController.h */,
+				224697671B149C1E00E6845A /* EventsViewController.m */,
 				229D8F131A57A7E500B92A4B /* WebViewController.h */,
 				229D8F141A57A7E500B92A4B /* WebViewController.m */,
 				22E813FE1A59409700B09802 /* InAppBrowserViewController.h */,
@@ -606,6 +611,7 @@
 				229D934D1A58300D00B92A4B /* TUSafariActivity.m in Sources */,
 				22C453EE19CD3FD8007D6292 /* ViewController.m in Sources */,
 				229D8F151A57A7E500B92A4B /* WebViewController.m in Sources */,
+				224697681B149C1E00E6845A /* EventsViewController.m in Sources */,
 				22C453EB19CD3FD8007D6292 /* AppDelegate.m in Sources */,
 				224BC3661B1352A300B28DE4 /* AboutViewController.m in Sources */,
 				229D8F001A579B6D00B92A4B /* SVIndefiniteAnimatedView.m in Sources */,
