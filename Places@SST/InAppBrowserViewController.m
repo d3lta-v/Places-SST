@@ -139,6 +139,14 @@
         _refreshButton = bttn;
         stopBool = false;
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+        // Implemented autoscroll
+        if ([[self.urlString absoluteString] isEqualToString:@"http://www.sst.edu.sg/about-sst/our-facilities/"]) {
+            if (UI_USER_INTERFACE_IDIOM()!=UIUserInterfaceIdiomPad) {
+                //self.mainWebView.scrollView.contentOffset = CGPointMake(0, 2000);
+                [self.mainWebView stringByEvaluatingJavaScriptFromString:@"window.scrollTo(0,4220)"];
+            }
+        }
     }
     
     self.navigationItem.title = [_mainWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
