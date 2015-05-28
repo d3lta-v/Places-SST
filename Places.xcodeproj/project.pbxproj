@@ -14,12 +14,10 @@
 		22535D741B0B6523008C983D /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22535D731B0B6522008C983D /* Main~iPad.storyboard */; };
 		22535D761B0CA76C008C983D /* Main~3.5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22535D751B0CA76C008C983D /* Main~3.5.storyboard */; };
 		2256566B19DADE5A007D0702 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2256566A19DADE5A007D0702 /* Accelerate.framework */; };
-		227F58EB1A4AE17C00FCB2E9 /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */; };
 		229D8F001A579B6D00B92A4B /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D8EFB1A579B6D00B92A4B /* SVIndefiniteAnimatedView.m */; };
 		229D8F011A579B6D00B92A4B /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 229D8EFD1A579B6D00B92A4B /* SVProgressHUD.bundle */; };
 		229D8F021A579B6D00B92A4B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D8EFF1A579B6D00B92A4B /* SVProgressHUD.m */; };
 		229D8F121A579DC600B92A4B /* SIMUXCRParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D8F111A579DC600B92A4B /* SIMUXCRParser.m */; };
-		229D8F151A57A7E500B92A4B /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D8F141A57A7E500B92A4B /* WebViewController.m */; };
 		229D93481A58300D00B92A4B /* TUSafariActivity.strings in Resources */ = {isa = PBXBuildFile; fileRef = 229D932E1A58300D00B92A4B /* TUSafariActivity.strings */; };
 		229D93491A58300D00B92A4B /* Safari.png in Resources */ = {isa = PBXBuildFile; fileRef = 229D933E1A58300D00B92A4B /* Safari.png */; };
 		229D934A1A58300D00B92A4B /* Safari@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 229D933F1A58300D00B92A4B /* Safari@2x.png */; };
@@ -33,7 +31,6 @@
 		229D935B1A58D57600B92A4B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229D935A1A58D57600B92A4B /* QuartzCore.framework */; };
 		229D935D1A58D57E00B92A4B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229D935C1A58D57E00B92A4B /* CoreText.framework */; };
 		229D935F1A58D58500B92A4B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229D935E1A58D58500B92A4B /* MobileCoreServices.framework */; };
-		229D93901A58DF4C00B92A4B /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 229D93871A58DB6600B92A4B /* libDTCoreText.a */; };
 		22C12B6E1ADEB3800074F1F3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C12B6D1ADEB3800074F1F3 /* SystemConfiguration.framework */; };
 		22C453E819CD3FD8007D6292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453E719CD3FD8007D6292 /* main.m */; };
 		22C453EB19CD3FD8007D6292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C453EA19CD3FD8007D6292 /* AppDelegate.m */; };
@@ -120,8 +117,6 @@
 		22535D731B0B6522008C983D /* Main~iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~iPad.storyboard"; sourceTree = "<group>"; };
 		22535D751B0CA76C008C983D /* Main~3.5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~3.5.storyboard"; sourceTree = "<group>"; };
 		2256566A19DADE5A007D0702 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		227F58E91A4AE17C00FCB2E9 /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
-		227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
 		229D8EFA1A579B6D00B92A4B /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		229D8EFB1A579B6D00B92A4B /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		229D8EFC1A579B6D00B92A4B /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
@@ -130,8 +125,6 @@
 		229D8EFF1A579B6D00B92A4B /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		229D8F101A579DC600B92A4B /* SIMUXCRParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIMUXCRParser.h; sourceTree = "<group>"; };
 		229D8F111A579DC600B92A4B /* SIMUXCRParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIMUXCRParser.m; sourceTree = "<group>"; };
-		229D8F131A57A7E500B92A4B /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		229D8F141A57A7E500B92A4B /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		229D932F1A58300D00B92A4B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
 		229D93301A58300D00B92A4B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
 		229D93311A58300D00B92A4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
@@ -197,7 +190,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				22C12B6E1ADEB3800074F1F3 /* SystemConfiguration.framework in Frameworks */,
-				229D93901A58DF4C00B92A4B /* libDTCoreText.a in Frameworks */,
 				229D935F1A58D58500B92A4B /* MobileCoreServices.framework in Frameworks */,
 				229D935D1A58D57E00B92A4B /* CoreText.framework in Frameworks */,
 				229D935B1A58D57600B92A4B /* QuartzCore.framework in Frameworks */,
@@ -330,12 +322,8 @@
 				22C453EA19CD3FD8007D6292 /* AppDelegate.m */,
 				22C453EC19CD3FD8007D6292 /* ViewController.h */,
 				22C453ED19CD3FD8007D6292 /* ViewController.m */,
-				227F58E91A4AE17C00FCB2E9 /* EventsTableViewController.h */,
-				227F58EA1A4AE17C00FCB2E9 /* EventsTableViewController.m */,
 				224697661B149C1E00E6845A /* EventsViewController.h */,
 				224697671B149C1E00E6845A /* EventsViewController.m */,
-				229D8F131A57A7E500B92A4B /* WebViewController.h */,
-				229D8F141A57A7E500B92A4B /* WebViewController.m */,
 				22E813FE1A59409700B09802 /* InAppBrowserViewController.h */,
 				22E813FF1A59409700B09802 /* InAppBrowserViewController.m */,
 				224BC3641B1352A300B28DE4 /* AboutViewController.h */,
@@ -436,7 +424,7 @@
 						DevelopmentTeam = 7K6ZTDFM48;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -610,7 +598,6 @@
 				22C4540D19CD5538007D6292 /* NoBluetoothViewController.m in Sources */,
 				229D934D1A58300D00B92A4B /* TUSafariActivity.m in Sources */,
 				22C453EE19CD3FD8007D6292 /* ViewController.m in Sources */,
-				229D8F151A57A7E500B92A4B /* WebViewController.m in Sources */,
 				224697681B149C1E00E6845A /* EventsViewController.m in Sources */,
 				22C453EB19CD3FD8007D6292 /* AppDelegate.m in Sources */,
 				224BC3661B1352A300B28DE4 /* AboutViewController.m in Sources */,
@@ -618,7 +605,6 @@
 				229D8F021A579B6D00B92A4B /* SVProgressHUD.m in Sources */,
 				229D8F121A579DC600B92A4B /* SIMUXCRParser.m in Sources */,
 				221CD2771A37263100CECF74 /* PlacesKit.m in Sources */,
-				227F58EB1A4AE17C00FCB2E9 /* EventsTableViewController.m in Sources */,
 				229D93531A58D45D00B92A4B /* NJKWebViewProgress.m in Sources */,
 				22C453E819CD3FD8007D6292 /* main.m in Sources */,
 				229D93541A58D45D00B92A4B /* NJKWebViewProgressView.m in Sources */,
@@ -787,8 +773,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

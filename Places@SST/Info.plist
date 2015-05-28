@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>10000257</string>
+	<string>10000272</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -38,11 +38,6 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app uses Bluetooth 4.0 BLE technology to retrieve your location in SST. This app uses only Bluetooth and no GPS.</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>bluetooth-central</string>
-		<string>bluetooth-peripheral</string>
-	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile~ipad</key>
