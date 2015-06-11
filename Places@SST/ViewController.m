@@ -10,11 +10,13 @@
 #import "NoBluetoothViewController.h"
 #import "PlacesKit.h"
 #import "InAppBrowserViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ViewController ()
 {
     NSString *locationString;
     NSString *linkURL;
+    NSString *lastKnownPosition;
     bool inRegion;
     
     BOOL debugMode;
@@ -33,12 +35,15 @@
         iPadIsUsed = UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad; // Initialization of a run-time constant
         linkURL = @"";
         self.beaconDisconnectInteger = 0;
+        lastKnownPosition = [NSString new];
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"debug_mode"]==YES) {
             debugMode = YES;
         }
     }
     return self;
 }
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -76,6 +81,14 @@
     }
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -103,15 +116,7 @@
             return;
         }
         
-        // Use different signal "Immediate" thresholds for iPad and iPhone, since iPads have better signal sensitivity
-        short immediateThreshold;
-        if (iPadIsUsed) {
-            immediateThreshold = -65;
-        } else {
-            immediateThreshold = -68;
-        }
-        
-        if (foundBeacon.rssi>=immediateThreshold) {
+        if (foundBeacon.proximity == CLProximityImmediate) {
             _signalIndicator.image = [self applySignal:3];
             if (![linkURL isEqualToString:@""]) {
                 // Initiate segue only when linkURL is not empty
@@ -139,6 +144,24 @@
             _beaconDisconnectThreshold.text = [NSString stringWithFormat:@"%hd/9", self.beaconDisconnectInteger];
             _rawRSSI.text = [NSString stringWithFormat:@"RSSI: %lddBm", (long)foundBeacon.rssi];
         }
+        
+        // Play sound (only when beacon is first detected)
+        if (![_inferredLocation.text isEqualToString:lastKnownPosition]) {
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                lastKnownPosition = _inferredLocation.text;
+            });
+            
+            NSURL *fileURL = [NSURL URLWithString:@"/System/Library/Audio/UISounds/Modern/airdrop_invite.caf"];
+            SystemSoundID soundID;
+            AudioServicesCreateSystemSoundID((__bridge_retained CFURLRef)fileURL,&soundID);
+            AudioServicesPlaySystemSound(soundID);
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate); // Vibrate the phone/tablet
+        } else {
+            lastKnownPosition = _inferredLocation.text;
+        }
+        
+        
     } else {
         // Beacon count is zero
         
@@ -165,7 +188,7 @@
     }
 }
 
-#pragma mark -
+#pragma mark - Private methods
 
 -(UIImage *)applySignal:(short)imageId {
     // Image ID is as below:
